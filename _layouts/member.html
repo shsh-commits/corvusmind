@@ -29,11 +29,12 @@ layout: default
     <h3 class="sub">Badges</h3>
     <button class="btn cert-open" type="button" aria-controls="cert-panel" aria-expanded="false">Certifications ({{ certs.size }})</button>
   </div>
-  {% if page.badges and page.badges.size > 0 %}
+  {% assign badges = page.badges | where_exp: "b", "b.title != ''" %}
+  {% if badges.size > 0 %}
   <div class="carousel">
     <button class="cbtn prev" type="button" aria-label="Précédent">&lsaquo;</button>
     <div class="track">
-      {% for b in page.badges %}
+      {% for b in badges %}
       <figure class="badge">
         {% capture href %}{% include safe-url.html u=b.url %}{% endcapture %}
         {% if href != "" %}<a href="{{ href }}" target="_blank" rel="noopener">{% endif %}
