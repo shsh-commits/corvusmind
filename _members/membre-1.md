@@ -20,7 +20,7 @@ badges:
     url: ""
 # Liste affichée dans le panneau « Certifications » (img = icône, vide = initiale).
 certifications:
-  - title: "Deepthreats"
+  - title: "Deepthreats - Participation"
     issuer: "Campus OSINT - DGA"
     img: "https://badgify.eu/uploads/certificates/0c0a3e04-506e-40f0-abc7-1fe32b2905e7.png"
     url: "https://badgify.eu/certificate/IJD3WOE6BA5grcMJIT88QoHeRUlpSRWu"
