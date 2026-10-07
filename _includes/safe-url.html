@@ -1,0 +1,3 @@
+{%- comment -%} Renvoie l'adresse échappée si elle commence par http(s)://, sinon rien {%- endcomment -%}
+{%- assign _u = include.u | strip -%}{%- assign _p = _u | slice: 0, 8 | downcase -%}
+{%- if _p == "https://" or _p contains "http://" -%}{{ _u | escape }}{%- endif -%}

@@ -14,21 +14,22 @@ layout: default
   <div class="grid">
   {% for r in site.data.palmares %}
     <article class="card palm">
-      <div class="rk">{{ r.name }}</div>
-      <h3>{{ r.rank }}</h3>
-      <small>{{ r.meta }}</small>
-      {% if r.membres %}<div class="team">{% for n in r.membres %}<span>@{{ n }}</span>{% endfor %}</div>{% endif %}
+      <div class="rk">{{ r.name | escape }}</div>
+      <h3>{{ r.rank | escape }}</h3>
+      <small>{{ r.meta | escape }}</small>
+      {% if r.membres %}<div class="team">{% for n in r.membres %}<span>@{{ n | escape }}</span>{% endfor %}</div>{% endif %}
       {% if r.logos and r.logos.size > 0 %}
       <div class="orgs">
         {% for o in r.logos %}
-          {% if o.url and o.url != "" %}<a class="org-link" href="{{ o.url }}" target="_blank" rel="noopener" title="{{ o.name }}">{% endif %}
+          {% capture href %}{% include safe-url.html u=o.url %}{% endcapture %}
+          {% if href != "" %}<a class="org-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ o.name | escape }}">{% endif %}
           {% if o.img and o.img != "" %}
-            {% if o.img contains "://" %}{% assign src = o.img %}{% else %}{% assign src = '/assets/img/logos/' | append: o.img | relative_url %}{% endif %}
-            <img class="org" src="{{ src }}" alt="{{ o.name }}" title="{{ o.name }}">
+            {% if o.img contains "://" %}{% assign src = o.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: o.img | relative_url %}{% endif %}
+            <img class="org" src="{{ src }}" alt="{{ o.name | escape }}" title="{{ o.name | escape }}">
           {% else %}
-            <span class="org org-ph" title="{{ o.name }}">{{ o.name | slice: 0 }}</span>
+            <span class="org org-ph" title="{{ o.name | escape }}">{{ o.name | slice: 0 | escape }}</span>
           {% endif %}
-          {% if o.url and o.url != "" %}</a>{% endif %}
+          {% if href != "" %}</a>{% endif %}
         {% endfor %}
       </div>
       {% endif %}
@@ -44,10 +45,10 @@ layout: default
   {% assign members = site.members | sort: 'order' %}
   {% for m in members %}
     <article class="card member">
-      {% if m.photo and m.photo != "" %}{% if m.photo contains "://" %}{% assign photo = m.photo %}{% else %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url %}{% endif %}<img class="av" src="{{ photo }}" alt="{{ m.name }}">
-      {% else %}<div class="av">{{ m.name | slice: 0 }}</div>{% endif %}
-      <h3>{{ m.name }}</h3>
-      <small>{{ m.role }}</small>
+      {% if m.photo and m.photo != "" %}{% if m.photo contains "://" %}{% assign photo = m.photo | escape %}{% else %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}{% endif %}<img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
+      {% else %}<div class="av">{{ m.name | slice: 0 | escape }}</div>{% endif %}
+      <h3>{{ m.name | escape }}</h3>
+      <small>{{ m.role | escape }}</small>
       <div class="links">
         <a class="detail" href="{{ m.url | relative_url }}">Détail</a>
       </div>
@@ -63,6 +64,8 @@ layout: default
     <label>Objet *<input name="_subject" required></label>
     <label>Message *<textarea name="message" rows="6" required></textarea></label>
     <label>E-mail * (pour être recontacté)<input type="email" name="email" required></label>
+    <!-- Piège anti-robots : invisible pour les humains, Formspree rejette l'envoi s'il est rempli -->
+    <label class="hp" aria-hidden="true">Ne pas remplir<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
     <p class="req-note">* : obligatoire</p>
     <button class="btn" type="submit">Envoyer le message</button>
   </form>
