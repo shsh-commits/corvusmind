@@ -6,3 +6,4 @@
 4. Contenu : `_data/palmares.yml` et `_data/membres.yml` (photos dans `assets/img/membres/`).
 
 Local : `gem install jekyll && jekyll serve`
+-----
