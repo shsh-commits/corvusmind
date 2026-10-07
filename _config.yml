@@ -1,15 +1,24 @@
-title: "CORVUS MIND"
-tagline: "Renseignement en sources ouvertes"
-description: "Équipe CTF OSINT Corvus Mind — investigations, géolocalisation, CTF OSINT."
+title: "Corvus Mind"
+tagline: "Équipe de renseignement en sources ouvertes"
+description: "Corvus Mind, équipe OSINT francophone : investigations en sources ouvertes, géolocalisation, SOCMINT et compétitions CTF OSINT."
 lang: fr
+locale: fr_FR
+logo: /assets/img/favicon.png      # logo pour Google (résultats de recherche)
+image: /assets/img/logo.png       # aperçu lors d'un partage (LinkedIn, Discord…)
 baseurl: "/corvusmind"  # "/nom-du-repo" si le site n'est pas à la racine
-url: ""
+url: "https://shsh-commits.github.io"
 # Formspree : créer un formulaire sur formspree.io et coller l'ID ici
 formspree_id: "xvkzkkoo"
 # Dépôt GitHub « utilisateur/nom-du-repo » : active le lien « Modifier mon profil »
 repository: ""
 branch: main
 exclude: [README.md, .github]
+
+# Référencement : génère sitemap.xml (extension prise en charge par GitHub Pages)
+plugins:
+  - jekyll-sitemap
+# Google Search Console : coller ici le code de vérification (balise meta)
+google_site_verification: ""
 
 # Pages individuelles des membres (une fiche = un fichier dans _members/)
 collections:

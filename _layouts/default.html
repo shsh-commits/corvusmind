@@ -5,8 +5,25 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>{% if page.name %}{{ page.name | escape }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
-<meta name="description" content="{{ site.description }}">
+{% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
+<title>{{ page_title | escape }}</title>
+<meta name="description" content="{{ page_desc | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ site.image | absolute_url }}">
+<meta name="twitter:card" content="summary">
+{% if site.google_site_verification != "" %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+{% if page.url == "/" %}<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"{{ '/#org' | absolute_url }}","name":"Corvus Mind","alternateName":["Corvus Mind OSINT","CORVUS MIND"],"url":"{{ '/' | absolute_url }}","logo":"{{ site.logo | absolute_url }}","description":{{ site.description | jsonify }}},
+ {"@type":"WebSite","name":"Corvus Mind","alternateName":"Corvus Mind OSINT","url":"{{ '/' | absolute_url }}","inLanguage":"fr","publisher":{"@id":"{{ '/#org' | absolute_url }}"}}
+]}
+</script>{% endif %}
 <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
