@@ -4,7 +4,8 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:15px/1.6 'JetBrains Mono',monospace}
 a{color:inherit;text-decoration:none}
 
-.bg-logo{position:fixed;inset:0;background:url("../img/logo.png") center/min(80vw,720px) no-repeat;opacity:.3;pointer-events:none;z-index:-1}
+/* Logo de fond : centré sous la barre de menu, toujours entier (limité par la largeur ET la hauteur de l'écran) */
+.bg-logo{position:fixed;inset:72px 0 0 0;background:url("../img/logo.png") center/min(80vw,calc(100vh - 120px),720px) no-repeat;background-size:min(80vw,calc(100dvh - 120px),720px);opacity:.3;pointer-events:none;z-index:-1}
 
 .nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:16px max(16px,5vw);background:rgba(5,7,13,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
 .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.05em}
