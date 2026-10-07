@@ -1,0 +1,136 @@
+---
+layout: default
+---
+<section class="sec member-page">
+  <p class="k top-row"><a class="back" href="{{ '/#membres' | relative_url }}">Retour à l'équipe</a>
+    {% if site.repository and site.repository != "" %}<a class="edit" href="https://github.com/{{ site.repository }}/edit/{{ site.branch | default: 'main' }}/{{ page.path }}" target="_blank" rel="noopener">Modifier mon profil</a>{% endif %}</p>
+
+  <div class="profile">
+    {% if page.photo and page.photo != "" %}
+      {% if page.photo contains "://" %}{% assign photo = page.photo %}{% else %}{% assign photo = '/assets/img/membres/' | append: page.photo | relative_url %}{% endif %}
+      <img class="av" src="{{ photo }}" alt="{{ page.name }}">
+    {% else %}
+      <div class="av">{{ page.name | slice: 0 }}</div>
+    {% endif %}
+    <div class="profile-meta">
+      <h2>{{ page.name }}</h2>
+      <small>{{ page.role }}</small>
+      <div class="profile-links">
+        {% if page.social1 and page.social1 != "" %}<a href="{{ page.social1 }}" target="_blank" rel="noopener">Social 1</a>{% endif %}
+        {% if page.social2 and page.social2 != "" %}<a href="{{ page.social2 }}" target="_blank" rel="noopener">Social 2</a>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if content != "" %}<div class="bio">{{ content }}</div>{% endif %}
+
+  {% assign certs = page.certifications | where_exp: "c", "c.title != ''" %}
+  <div class="sub-row">
+    <h3 class="sub">Badges</h3>
+    <button class="btn cert-open" type="button" aria-controls="cert-panel" aria-expanded="false">Certifications ({{ certs.size }})</button>
+  </div>
+  {% if page.badges and page.badges.size > 0 %}
+  <div class="carousel">
+    <button class="cbtn prev" type="button" aria-label="Précédent">&lsaquo;</button>
+    <div class="track">
+      {% for b in page.badges %}
+      <figure class="badge">
+        {% if b.url and b.url != "" %}<a href="{{ b.url }}" target="_blank" rel="noopener">{% endif %}
+          {% if b.img and b.img != "" %}
+            <img src="{{ b.img | relative_url }}" alt="{{ b.title }}">
+          {% else %}
+            <div class="badge-ph">{{ b.title | slice: 0 }}</div>
+          {% endif %}
+        {% if b.url and b.url != "" %}</a>{% endif %}
+        <figcaption><strong>{{ b.title }}</strong>{% if b.issuer and b.issuer != "" %}<span>{{ b.issuer }}</span>{% endif %}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <button class="cbtn next" type="button" aria-label="Suivant">&rsaquo;</button>
+  </div>
+  {% else %}
+  <p class="lead">Aucun badge pour le moment.</p>
+  {% endif %}
+</section>
+
+<div class="cert-overlay" hidden></div>
+<aside id="cert-panel" class="cert-panel" role="dialog" aria-modal="true" aria-labelledby="cert-title" aria-hidden="true" tabindex="-1">
+  <div class="cert-head">
+    <h3 id="cert-title">Certifications</h3>
+    <button class="cbtn cert-close" type="button" aria-label="Fermer">&times;</button>
+  </div>
+  {% if certs.size > 0 %}
+  <ul class="cert-list">
+    {% for c in certs %}
+    <li>
+      {% if c.url and c.url != "" %}<a class="cert-item" href="{{ c.url }}" target="_blank" rel="noopener">{% else %}<div class="cert-item">{% endif %}
+        {% if c.img and c.img != "" %}<img class="cert-ic" src="{{ c.img | relative_url }}" alt="">{% else %}<span class="cert-ic">{{ c.title | slice: 0 }}</span>{% endif %}
+        <span class="cert-txt"><strong>{{ c.title }}</strong>{% if c.issuer and c.issuer != "" %}<small>{{ c.issuer }}</small>{% endif %}</span>
+      {% if c.url and c.url != "" %}</a>{% else %}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="lead">Aucune certification pour le moment.</p>
+  {% endif %}
+</aside>
+
+<script>
+var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.carousel').forEach(function(c){
+  var t=c.querySelector('.track'), anim=null;
+  function step(){
+    var card=t.querySelector('.badge');
+    var gap=parseInt(getComputedStyle(t).columnGap||getComputedStyle(t).gap)||14;
+    return card?card.getBoundingClientRect().width+gap:240;
+  }
+  // Glissement animé maison : plus rapide et plus régulier que behavior:'smooth'
+  function slideTo(x,dur){
+    var max=t.scrollWidth-t.clientWidth;
+    x=Math.max(0,Math.min(max,x));
+    if(anim)cancelAnimationFrame(anim);
+    if(reduceMotion){t.scrollLeft=x;return;}
+    var from=t.scrollLeft, d=x-from, t0=null;
+    dur=dur||420;
+    t.classList.add('sliding');
+    function frame(ts){
+      if(t0===null)t0=ts;
+      var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3); // ease-out cubique
+      t.scrollLeft=from+d*e;
+      if(p<1)anim=requestAnimationFrame(frame);
+      else{anim=null;t.classList.remove('sliding');}
+    }
+    anim=requestAnimationFrame(frame);
+  }
+  // Position cible arrondie au badge le plus proche pour éviter les décalages
+  function target(dir){var s=step();return (Math.round(t.scrollLeft/s)+dir)*s;}
+  function next(){
+    if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4)slideTo(0,600);
+    else slideTo(target(1));
+  }
+  c.querySelector('.prev').addEventListener('click',function(){slideTo(target(-1));});
+  c.querySelector('.next').addEventListener('click',next);
+});
+
+// Panneau latéral des certifications
+(function(){
+  var panel=document.getElementById('cert-panel'), ov=document.querySelector('.cert-overlay'), openBtn=document.querySelector('.cert-open');
+  if(!panel||!openBtn)return;
+  function open(){
+    ov.hidden=false;
+    requestAnimationFrame(function(){panel.classList.add('open');ov.classList.add('open');});
+    panel.setAttribute('aria-hidden','false');openBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';panel.focus();
+  }
+  function close(){
+    panel.classList.remove('open');ov.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');openBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';openBtn.focus();
+    setTimeout(function(){ov.hidden=true;},300);
+  }
+  openBtn.addEventListener('click',open);
+  panel.querySelector('.cert-close').addEventListener('click',close);
+  ov.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('open'))close();});
+})();
+</script>

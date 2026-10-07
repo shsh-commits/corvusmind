@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.name %}{{ page.name }} · {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<div class="bg-logo" style="background-image:url('{{ '/assets/img/logo.png' | relative_url }}')" aria-hidden="true"></div>
+<header class="nav">
+  <a class="brand" href="{{ '/#accueil' | relative_url }}">
+    <span class="crow" aria-hidden="true" style="-webkit-mask-image:url('{{ '/assets/img/crow-logo.png' | relative_url }}');mask-image:url('{{ '/assets/img/crow-logo.png' | relative_url }}')">
+      <span class="eye"></span>
+    </span>CORVUS MIND</a>
+  <nav>
+    <a href="{{ '/#palmares' | relative_url }}">Palmarès</a>
+    <a href="{{ '/#membres' | relative_url }}">Membres</a>
+    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+  </nav>
+</header>
+<main>{{ content }}</main>
+<footer><a href="{{ '/#accueil' | relative_url }}">CORVUS MIND</a><span>OSINT</span><a href="{{ '/#accueil' | relative_url }}">Retour en haut</a></footer>
+</body>
+</html>

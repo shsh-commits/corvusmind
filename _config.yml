@@ -1,0 +1,18 @@
+title: "CORVUS MIND"
+tagline: "Renseignement en sources ouvertes"
+description: "Équipe CTF OSINT Corvus Mind — investigations, géolocalisation, CTF OSINT."
+lang: fr
+baseurl: "/corvusmind"  # "/nom-du-repo" si le site n'est pas à la racine
+url: ""
+# Formspree : créer un formulaire sur formspree.io et coller l'ID ici
+formspree_id: "xvkzkkoo"
+# Dépôt GitHub « utilisateur/nom-du-repo » : active le lien « Modifier mon profil »
+repository: ""
+branch: main
+exclude: [README.md, .github]
+
+# Pages individuelles des membres (une fiche = un fichier dans _members/)
+collections:
+  members:
+    output: true
+    permalink: /membres/:name/
