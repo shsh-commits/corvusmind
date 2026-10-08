@@ -18,7 +18,7 @@ exclude: [README.md, .github]
 plugins:
   - jekyll-sitemap
 # Google Search Console : coller ici le code de vérification (balise meta)
-google_site_verification: ""
+google_site_verification: "LujCxQBZz_9yOn4_CccvQcrsPRnxuSlU20uGbCjIZ5Y"
 
 # Pages individuelles des membres (une fiche = un fichier dans _members/)
 collections:
