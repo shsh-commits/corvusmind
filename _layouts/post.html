@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="post">
+  <p class="k top-row"><a class="back" href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
+  <article class="sheet">
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>{% if page.type and page.type != "" %}<span class="news-tag">{{ page.type | escape }}</span>{% endif %}{% if page.author and page.author != "" %}<span>par @{{ page.author | escape }}</span>{% endif %}</p>
+    <h2>{{ page.title | escape }}</h2>
+    <div class="post-body">{{ content }}</div>
+  </article>
+</div>

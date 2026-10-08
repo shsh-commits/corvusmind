@@ -1,0 +1,12 @@
+{%- comment -%} Liste de news. include.posts = articles à afficher {%- endcomment -%}
+<ul class="news-list">
+  {% for p in include.posts %}
+  <li>
+    <a href="{{ p.url | relative_url }}">
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%d/%m/%Y" }}</time>
+      <span class="news-tag">{{ p.type | default: "News" | escape }}</span>
+      <span class="news-title">{{ p.title | escape }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

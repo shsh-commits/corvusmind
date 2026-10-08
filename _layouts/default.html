@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-{% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
+{% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% elsif page.layout == "post" %}{% assign page_title = page.title | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
 <title>{{ page_title | escape }}</title>
 <meta name="description" content="{{ page_desc | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -37,8 +37,9 @@
       <span class="eye"></span>
     </span>CORVUS MIND</a>
   <nav>
+    <a href="{{ '/#news' | relative_url }}">News</a>
     <a href="{{ '/#palmares' | relative_url }}">Palmarès</a>
-    <a href="{{ '/#membres' | relative_url }}">Membres</a>
+    <a href="{{ '/#membres' | relative_url }}">L'équipe</a>
     <a href="{{ '/#contact' | relative_url }}">Contact</a>
   </nav>
 </header>

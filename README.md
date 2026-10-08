@@ -4,6 +4,7 @@
 2. Si le repo n'est pas `<user>.github.io`, mettre `baseurl: "/nom-du-repo"` dans `_config.yml`.
 3. Contact : créer un formulaire sur formspree.io (avec l'adresse mail voulue), coller l'ID dans `formspree_id`.
 4. Contenu : `_data/palmares.yml` et `_data/membres.yml` (photos dans `assets/img/membres/`).
+5. News / writeups : un fichier `_posts/AAAA-MM-JJ-titre.md` par article (modèle : `_posts/2026-10-08-lancement-du-site.md`). Les 4 plus récents s'affichent sur l'accueil, tous sur `/news/`.
 
 Local : `gem install jekyll && jekyll serve`
 -----

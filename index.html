@@ -5,11 +5,19 @@ layout: default
   <p class="k">ÉQUIPE OSINT · RENSEIGNEMENT EN SOURCES OUVERTES</p>
   <h1>CORVUS MIND</h1>
   <p class="lead">Investigations, géolocalisation, SOCMINT et compétitions CTF OSINT.</p>
-  <div class="btns"><a class="btn" href="#palmares">Palmarès</a><a class="btn ghost" href="#membres">L'équipe</a></div>
+  <div class="btns"><a class="btn" href="#news">News</a><a class="btn ghost" href="#palmares">Palmarès</a><a class="btn ghost" href="#membres">L'équipe</a><a class="btn ghost" href="#contact">Contact</a></div>
+</section>
+
+<section id="news" class="sec news">
+  <div class="news-head">
+    <p class="k">NEWS</p>
+    {% if site.posts.size > 4 %}<a class="news-all" href="{{ '/news/' | relative_url }}">Toutes les news</a>{% endif %}
+  </div>
+  {% if site.posts.size > 0 %}{% assign recent = site.posts | slice: 0, 4 %}{% include news-list.html posts=recent %}{% else %}<p class="lead">Premières publications à venir.</p>{% endif %}
 </section>
 
 <section id="palmares" class="sec">
-  <p class="k">01 / COMPÉTITIONS</p>
+  <p class="k">COMPÉTITIONS</p>
   <h2>Palmarès</h2>
   <div class="grid">
   {% for r in site.data.palmares %}
@@ -39,7 +47,7 @@ layout: default
 </section>
 
 <section id="membres" class="sec">
-  <p class="k">02 / ÉQUIPE</p>
+  <p class="k">ÉQUIPE</p>
   <h2>Membres</h2>
   <div class="grid">
   {% assign members = site.members | sort: 'order' %}
@@ -58,7 +66,7 @@ layout: default
 </section>
 
 <section id="contact" class="sec">
-  <p class="k">03 / ÉCHANGEONS</p>
+  <p class="k">ÉCHANGEONS</p>
   <h2>Contact</h2>
   <form class="form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
     <label>Objet *<input name="_subject" required></label>

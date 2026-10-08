@@ -15,10 +15,22 @@ layout: default
     <div class="profile-meta">
       <h2>{{ page.name | escape }}</h2>
       <small>{{ page.role | escape }}</small>
-      <div class="profile-links">
-        {% capture s1 %}{% include safe-url.html u=page.social1 %}{% endcapture %}{% if s1 != "" %}<a href="{{ s1 }}" target="_blank" rel="noopener">Social 1</a>{% endif %}
-        {% capture s2 %}{% include safe-url.html u=page.social2 %}{% endcapture %}{% if s2 != "" %}<a href="{{ s2 }}" target="_blank" rel="noopener">Social 2</a>{% endif %}
-      </div>
+      {% comment %} Liens construits d'abord : si aucun n'est valide, le bouton Social n'est pas affiché {% endcomment %}
+      {% capture social_links %}{% for s in page.socials %}
+        {% capture href %}{% include safe-url.html u=s.url %}{% endcapture %}
+        {% if href != "" %}<a class="social-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ s.name | escape }}">
+          {% if s.img and s.img != "" %}
+            {% if s.img contains "://" %}{% assign src = s.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: s.img | relative_url %}{% endif %}
+            <img class="social-ic" src="{{ src }}" alt="{{ s.name | escape }}">
+          {% else %}<span class="social-ic social-ph">{{ s.name | default: href | remove: "https://" | remove: "http://" | slice: 0 | upcase | escape }}</span>{% endif %}
+        </a>{% endif %}
+      {% endfor %}{% endcapture %}
+      {% if social_links contains "social-link" %}
+      <details class="social">
+        <summary class="btn">Social</summary>
+        <div class="social-pop">{{ social_links }}</div>
+      </details>
+      {% endif %}
     </div>
   </div>
 

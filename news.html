@@ -1,0 +1,10 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+<section class="sec">
+  <p class="k">NEWS</p>
+  <h2>News &amp; writeups</h2>
+  {% if site.posts.size > 0 %}{% include news-list.html posts=site.posts %}{% else %}<p class="lead">Aucune publication pour le moment.</p>{% endif %}
+</section>

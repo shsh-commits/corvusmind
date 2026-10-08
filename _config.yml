@@ -20,6 +20,12 @@ plugins:
 # Google Search Console : coller ici le code de vérification (balise meta)
 google_site_verification: "LujCxQBZz_9yOn4_CccvQcrsPRnxuSlU20uGbCjIZ5Y"
 
+# News / writeups : un fichier par article dans _posts/ (AAAA-MM-JJ-titre.md)
+permalink: /news/:year/:title/
+defaults:
+  - scope: {type: posts}
+    values: {layout: post}
+
 # Pages individuelles des membres (une fiche = un fichier dans _members/)
 collections:
   members:
