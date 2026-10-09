@@ -2,9 +2,9 @@
 layout: member
 owner: ""        # compte GitHub du membre (réservé à l'admin)
 name: "Mabimzaa"
-role: "Membre"
+role: "Investigation & recoupement de sources"
 order: 2
-photo: ""        # fichier dans assets/img/membres/ (vide = initiale)
+photo: "mabimzaa.png"        # fichier dans assets/img/membres/ (vide = initiale)
 # Liens de la fenêtre « Social » (url vide = ignoré, aucun lien = pas de bouton).
 # img = logo (fichier dans assets/img/logos/), vide = initiale du nom.
 socials:
@@ -25,4 +25,4 @@ certifications:
     img: "cert-deepthreats-participation.png"
     url: ""
 ---
-Remplace ce texte par une courte bio.
+Membre de Corvus Mind, je pratique le renseignement en sources ouvertes au sens large : recherche de personnes, géolocalisation, SOCMINT et analyse d'images. Ce qui me plaît en compétition, c'est le recoupement — partir d'un détail (un reflet dans une photo, un pseudo réutilisé ailleurs, une archive oubliée) et tirer le fil jusqu'à ce que les pièces s'emboîtent. Rigueur sur les sources, respect du cadre légal, et une préférence marquée pour les défis 100 % OSINT.
