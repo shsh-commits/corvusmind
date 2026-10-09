@@ -25,4 +25,4 @@ certifications:
     img: "cert-deepthreats-participation.png"
     url: "https://badgify.eu/certificate/IJD3WOE6BA5grcMJIT88QoHeRUlpSRWu"
 ---
-Analyste OSINT
+Analyste OSINT Amateur
