@@ -1,41 +1,53 @@
-### Corvus Mind — site OSINT (Jekyll / GitHub Pages)
+<div align="center">
 
-1. Pousser ce dossier dans un repo GitHub → Settings › Pages › Deploy from branch `main` / root.
-2. Si le repo n'est pas `<user>.github.io`, mettre `baseurl: "/nom-du-repo"` dans `_config.yml`.
-3. Contact : créer un formulaire sur formspree.io (avec l'adresse mail voulue), coller l'ID dans `formspree_id`.
-4. Contenu : `_data/palmares.yml` et `_data/membres.yml` (photos dans `assets/img/membres/`).
-5. News : un fichier `_posts/AAAA-MM-JJ-titre.md` par article (modèle : `_posts/2026-10-08-lancement-du-site.md`). Les 4 plus récents s'affichent sur l'accueil, tous sur `/news/`.
-6. Writeups (PDF) : déposer le fichier dans `assets/writeups/`, nommé d'après le `name` de la compétition dans `_data/palmares.yml` — minuscules, sans accents, espaces → tirets. Le bouton « Writeup » apparaît alors automatiquement sur la carte du palmarès.
-   - « DeepThreats 2026 » → `assets/writeups/deepthreats-2026.pdf`
-   - « Opération Culot - Bpifrance » → `assets/writeups/operation-culot-bpifrance.pdf`
-   - Autre nom de fichier ou lien externe : ajouter `writeup: "fichier.pdf"` (ou `writeup: "https://…"`) à la compétition dans `palmares.yml`.
+# 🪶 Corvus Mind
 
-Local : `gem install jekyll && jekyll serve` → http://localhost:4000/corvusmind/
+**Équipe francophone de renseignement en sources ouvertes (OSINT).**
 
-#### Règles de contribution (branche `main`)
+Investigations · Géolocalisation · SOCMINT · Compétitions CTF OSINT
 
-Un ruleset GitHub protège `main`, pour tout le monde (admin compris) :
+🌐 **[corvusmind — le site](https://shsh-commits.github.io/corvusmind/)**
 
-- Autorisé : pousser normalement (`git push`), modifier / ajouter / supprimer des fichiers, créer d'autres branches, ouvrir et fusionner des pull requests.
-- Bloqué : forcer un push (`git push --force` ou `--force-with-lease`) et supprimer la branche `main`.
+</div>
 
-Un push normal **ajoute** des commits à la suite de l'historique : rien n'est perdu, toute version précédente reste récupérable. Un push forcé **remplace** l'historique de GitHub par le sien et efface les commits des autres :
+---
 
-```
-GitHub avant : A ── B ── C ── D
-Mon PC :       A ── B ── X
-Après --force: A ── B ── X        ← C et D perdus
-```
+## Qui nous sommes
 
-Chaque push publie immédiatement le site (GitHub Pages) : vérifier en local avant de pousser.
+Corvus Mind est une équipe d'OSINT (*Open Source INTelligence*) qui s'entraîne et concourt sur les CTF 100 % sources ouvertes. On part d'un détail — une photo, un pseudo, une archive — et on recoupe jusqu'à ce que les pièces s'emboîtent.
 
-**Si `git push` est refusé** (« rejected », « fetch first », « non-fast-forward ») : quelqu'un a poussé entre-temps. Ne pas forcer, récupérer d'abord ses commits :
+Une règle guide tout notre travail : **ne jamais exploiter que des sources publiques et légalement accessibles.** Pas d'intrusion, pas de contournement, dans le respect de la vie privée et du cadre légal.
 
-```
-git pull --rebase origin main
-git push origin main
-```
+## Ce qu'on fait
 
-En cas de conflit pendant le rebase : corriger les fichiers indiqués, puis `git add <fichier>` et `git rebase --continue` (ou `git rebase --abort` pour tout annuler).
+- **🔎 Recherche de personnes** — reconstituer une empreinte numérique à partir d'identifiants publics.
+- **🗺️ Géolocalisation (GEOINT)** — retrouver un lieu à partir des indices d'une image.
+- **📱 SOCMINT** — analyse des traces laissées sur les réseaux sociaux.
+- **🖼️ Analyse d'images (IMINT)** — métadonnées, recherche inversée, vérification.
+- **🕰️ Chronolocalisation** — dater un événement ou une photo.
+- **🏴 Compétitions** — CTF OSINT, individuels et en équipe.
 
-**Annuler une erreur déjà poussée** : `git revert <commit>` puis `git push` (crée un commit inverse, sans réécrire l'historique).
+## Palmarès
+
+| Compétition | Résultat |
+| --- | --- |
+| **DeepThreats 2026** — Campus OSINT / DGA | 25ᵉ / 491 |
+| **Opération Culot — Bpifrance** (#BIG2026) | 3ᵉ / 223 (distanciel) · 5ᵉ / 24 (présentiel) |
+
+## L'équipe
+
+Mabimzaa · Shakado · Sirius · Noje_77 — et la présentation détaillée de chacun sur le site.
+
+## Nous contacter
+
+Via le formulaire de contact du site : **[corvusmind](https://shsh-commits.github.io/corvusmind/#contact)**.
+
+---
+
+<div align="center">
+
+© Corvus Mind — Tous droits réservés.
+Le contenu, l'identité visuelle et le code de ce dépôt appartiennent à l'équipe Corvus Mind
+et ne peuvent être réutilisés sans autorisation.
+
+</div>
