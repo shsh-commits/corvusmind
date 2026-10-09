@@ -252,3 +252,16 @@ code{font-family:inherit;font-size:.92em;color:var(--ac);background:rgba(61,187,
 .tool .diff span{color:var(--ac);font-weight:700}
 .tb-outro{text-align:center;border-top:1px solid var(--ln)}
 .tb-outro a{color:var(--ac)}
+
+/* ============================================================
+   Centrage des titres & intros (le contenu reste aligné à gauche)
+   ============================================================ */
+/* Héros : contenu centré */
+.hero,.osint-hero,.tb-intro{text-align:center}
+.hero .lead,.osint-hero .lead,.tb-intro .lead,.tb-intro .tb-note{margin-left:auto;margin-right:auto}
+.hero .btns,.osint-hero .btns,.tb-intro .legend{justify-content:center}
+
+/* En-têtes de section : sur-titre + titre + phrase d'intro centrés (hors fiche membre) */
+.sec:not(.member-page) > .k{text-align:center}
+.sec:not(.member-page) > h2{text-align:center}
+.sec:not(.member-page) > .lead{margin-left:auto;margin-right:auto;text-align:center}
