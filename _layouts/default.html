@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 {% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% elsif page.layout == "post" %}{% assign page_title = page.title | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
 <title>{{ page_title | escape }}</title>
@@ -25,8 +25,6 @@
 ]}
 </script>{% endif %}
 <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
@@ -44,6 +42,6 @@
   </nav>
 </header>
 <main>{{ content }}</main>
-<footer><a href="{{ '/#accueil' | relative_url }}">CORVUS MIND</a><span>OSINT</span><a href="{{ '/#accueil' | relative_url }}">Retour en haut</a></footer>
+<footer><a href="{{ '/#accueil' | relative_url }}">CORVUS MIND</a><span>OSINT</span><a href="{{ '/#accueil' | relative_url }}">Retour en haut</a><small class="copy">© {{ site.time | date: '%Y' }} Corvus Mind · Tous droits réservés</small></footer>
 </body>
 </html>

@@ -12,13 +12,13 @@ formspree_id: "mqpeppjq"
 # Dépôt GitHub « utilisateur/nom-du-repo » : active le lien « Modifier mon profil »
 repository: ""
 branch: main
-exclude: [README.md, .github]
+exclude: [README.md, LICENSE, .github]
 
 # Référencement : génère sitemap.xml (extension prise en charge par GitHub Pages)
 plugins:
   - jekyll-sitemap
 # Google Search Console : coller ici le code de vérification (balise meta)
-google_site_verification: "LujCxQBZz_9yOn4_CccvQcrsPRnxuSlU20uGbCjIZ5Y"
+google_site_verification: "lBxaTovVbR49ICGBTmK1BDMAlVlK-Pg6EQn_Da65kps"
 
 # News / writeups : un fichier par article dans _posts/ (AAAA-MM-JJ-titre.md)
 permalink: /news/:year/:title/
