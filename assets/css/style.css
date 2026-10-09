@@ -149,9 +149,8 @@ img.cert-ic{border:none;background:none}
 /* News : liste compacte (accueil et page /news/) */
 .news{padding:28px 0 48px;border-top:0}
 .news+.sec{border-top:0}
-.news-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
-.news-all{font-size:12px;color:var(--mu);transition:.2s}
-.news-all:hover{color:var(--ac);text-shadow:var(--glow)}
+.news-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.news-head .btn.news-all{padding:4px 10px;font-size:11px;letter-spacing:.06em}
 .news-list{list-style:none;border-top:1px solid var(--ln)}
 .news-list li{border-bottom:1px solid var(--ln)}
 .news-list a{display:flex;align-items:baseline;gap:14px;padding:12px 4px;font-size:13px;transition:.2s}

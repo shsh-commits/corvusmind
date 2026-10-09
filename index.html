@@ -11,7 +11,7 @@ layout: default
 <section id="news" class="sec news">
   <div class="news-head">
     <p class="k">NEWS</p>
-    {% if site.posts.size > 4 %}<a class="news-all" href="{{ '/news/' | relative_url }}">Toutes les news</a>{% endif %}
+    <a class="btn news-all" href="{{ '/news/' | relative_url }}">Voir tous les articles</a>
   </div>
   {% if site.posts.size > 0 %}{% assign recent = site.posts | slice: 0, 4 %}{% include news-list.html posts=recent %}{% else %}<p class="lead">Premières publications à venir.</p>{% endif %}
 </section>
@@ -69,7 +69,7 @@ layout: default
   <p class="k">ÉCHANGEONS</p>
   <h2>Contact</h2>
   <form class="form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
-    <label>Objet *<input name="_subject" required></label>
+    <label>Objet *<input name="subject" required></label>
     <label>Message *<textarea name="message" rows="6" required></textarea></label>
     <label>E-mail * (pour être recontacté)<input type="email" name="email" required></label>
     <!-- Piège anti-robots : invisible pour les humains, Formspree rejette l'envoi s'il est rempli -->
