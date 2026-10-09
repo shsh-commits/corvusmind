@@ -16,8 +16,8 @@ Local : `gem install jekyll && jekyll serve` → http://localhost:4000/corvusmin
 
 Un ruleset GitHub protège `main`, pour tout le monde (admin compris) :
 
-- ✅ Autorisé : pousser normalement (`git push`), modifier / ajouter / supprimer des fichiers, créer d'autres branches, ouvrir et fusionner des pull requests.
-- ❌ Bloqué : forcer un push (`git push --force` ou `--force-with-lease`) et supprimer la branche `main`.
+- Autorisé : pousser normalement (`git push`), modifier / ajouter / supprimer des fichiers, créer d'autres branches, ouvrir et fusionner des pull requests.
+- Bloqué : forcer un push (`git push --force` ou `--force-with-lease`) et supprimer la branche `main`.
 
 Un push normal **ajoute** des commits à la suite de l'historique : rien n'est perdu, toute version précédente reste récupérable. Un push forcé **remplace** l'historique de GitHub par le sien et efface les commits des autres :
 
