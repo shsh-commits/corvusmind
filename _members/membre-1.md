@@ -25,4 +25,4 @@ certifications:
     img: "cert-deepthreats-participation.png"
     url: "https://badgify.eu/certificate/IJD3WOE6BA5grcMJIT88QoHeRUlpSRWu"
 ---
-Hypothèse, preuve et conclusion : La rigueur scientifique appliquée à l'OSINT.
+Analyste OSINT Junior - 
