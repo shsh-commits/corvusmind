@@ -26,8 +26,16 @@ layout: default
       <h3>{{ r.rank | escape }}</h3>
       <small>{{ r.meta | escape }}</small>
       {% if r.membres %}<div class="team">{% for n in r.membres %}<span>@{{ n | escape }}</span>{% endfor %}</div>{% endif %}
-      {% if r.logos and r.logos.size > 0 %}
+      {%- comment -%} Writeup : champ « writeup » sinon détection auto de assets/writeups/<nom-slugifié>.pdf {%- endcomment -%}
+      {% assign wu = "" %}
+      {% if r.writeup and r.writeup != "" %}
+        {% if r.writeup contains "://" %}{% capture wu %}{% include safe-url.html u=r.writeup %}{% endcapture %}{% else %}{% assign wu = '/assets/writeups/' | append: r.writeup | relative_url | escape %}{% endif %}
+      {% else %}
+        {% assign wu_slug = r.name | slugify: 'latin' %}{% assign wu_path = '/assets/writeups/' | append: wu_slug | append: '.pdf' %}
+        {% for f in site.static_files %}{% if f.path == wu_path %}{% assign wu = wu_path | relative_url | escape %}{% break %}{% endif %}{% endfor %}
+      {% endif %}
       <div class="orgs">
+        {% if r.logos and r.logos.size > 0 %}
         {% for o in r.logos %}
           {% capture href %}{% include safe-url.html u=o.url %}{% endcapture %}
           {% if href != "" %}<a class="org-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ o.name | escape }}">{% endif %}
@@ -39,8 +47,9 @@ layout: default
           {% endif %}
           {% if href != "" %}</a>{% endif %}
         {% endfor %}
+        {% endif %}
+        {% if wu != "" %}<a class="wu" href="{{ wu }}" target="_blank" rel="noopener" title="Writeup {{ r.name | escape }} (PDF)">Writeup</a>{% endif %}
       </div>
-      {% endif %}
     </article>
   {% endfor %}
   </div>

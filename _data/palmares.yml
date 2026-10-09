@@ -5,6 +5,9 @@
 # logos  : organisations participantes. img = fichier dans assets/img/logos/
 #          (images externes bloquées par la CSP). img vide = emplacement avec l'initiale du nom.
 #          url = lien ouvert au clic sur le logo (facultatif).
+# writeup : bouton affiché automatiquement si assets/writeups/<nom-slugifié>.pdf existe
+#           (ex. « DeepThreats 2026 » -> deepthreats-2026.pdf). Champ facultatif pour
+#           forcer un autre fichier de assets/writeups/ ou un lien https://.
 - name: "DeepThreats 2026"
   rank: "25e/491"
   meta: "CTF 100% OSINT"
