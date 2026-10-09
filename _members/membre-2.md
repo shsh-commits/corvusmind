@@ -1,7 +1,7 @@
 ---
 layout: member
 owner: ""        # compte GitHub du membre (réservé à l'admin)
-name: "Mabimbzaa"
+name: "Mabimzaa"
 role: "Membre"
 order: 2
 photo: ""        # fichier dans assets/img/membres/ (vide = initiale)
