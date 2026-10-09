@@ -1,25 +1,82 @@
+LICENCE PROPRIÉTAIRE — CORVUS MIND
 Copyright (c) 2026 Corvus Mind. Tous droits réservés.
 
-Le code source, les textes, la mise en page et les éléments graphiques propres
-à Corvus Mind contenus dans ce dépôt sont protégés par le droit d'auteur.
+====================================================================
+VERSION FRANÇAISE (fait foi)
+====================================================================
 
-Aucune licence n'est accordée. Sauf autorisation écrite préalable des propriétaires du site
-Corvus Mind, il est interdit de reproduire, copier, modifier, distribuer,
-publier ou réutiliser tout ou partie de ce dépôt, à quelque fin que ce soit.
+1. PROPRIÉTÉ
+   L'ensemble du contenu de ce dépôt — code source (HTML, CSS,
+   JavaScript, configuration), textes, structure, mise en page,
+   charte graphique, ainsi que le nom « Corvus Mind » et le logo du
+   corbeau — est la propriété exclusive de l'équipe Corvus Mind et
+   est protégé par le droit d'auteur et le droit des marques.
 
-La consultation du dépôt et sa duplication (fork) sur GitHub restent possibles
-dans les seules limites prévues par les conditions d'utilisation de GitHub ;
-elles ne confèrent aucun droit d'utilisation en dehors de GitHub.
+2. AUCUNE LICENCE ACCORDÉE
+   Aucun droit, aucune licence d'utilisation n'est concédé. La simple
+   consultation du dépôt ou du site, de même que la possibilité
+   technique de « voir le code source » dans un navigateur ou de
+   dupliquer (fork) le dépôt sur GitHub, ne confère AUCUN droit de
+   réutilisation.
 
-Éléments tiers, qui restent la propriété de leurs titulaires respectifs et ne
-sont pas couverts par cette mention :
-- les logos, badges et certificats de assets/img/logos/ ;
-- toutes les polices d'écritures (exemple :JetBrains Mono (assets/fonts/)), distribuée sous licence
-  SIL Open Font License 1.1 (voir assets/fonts/OFL.txt).
+3. ACTES INTERDITS
+   Sauf autorisation écrite préalable de Corvus Mind, il est
+   notamment interdit, pour tout ou partie de ce dépôt :
+     a. de reproduire, copier, télécharger ou archiver le contenu en
+        dehors des fonctions normales de GitHub ;
+     b. de modifier, adapter, traduire ou créer des œuvres dérivées ;
+     c. de distribuer, publier, mettre en ligne ou héberger le site
+        ou une version ressemblante, sous quelque nom que ce soit ;
+     d. d'utiliser le nom « Corvus Mind », le logo du corbeau ou la
+        charte graphique, y compris modifiés, de manière à créer une
+        confusion avec l'équipe ;
+     e. d'en faire un usage commercial ;
+     f. de retirer ou d'altérer les présentes mentions de copyright.
 
----
+4. RÉSERVE DE DROITS
+   Tous les droits non expressément accordés sont réservés. Toute
+   utilisation non autorisée engage la responsabilité de son auteur
+   et pourra donner lieu à des poursuites.
+
+5. DEMANDES D'AUTORISATION
+   Toute demande d'utilisation doit être adressée à l'équipe via le
+   formulaire de contact du site
+   (https://shsh-commits.github.io/corvusmind/#contact).
+
+6. ÉLÉMENTS TIERS (non couverts par la présente licence)
+   Les éléments suivants restent la propriété de leurs titulaires
+   respectifs et sont régis par leurs propres conditions :
+     - les logos, badges et certificats de assets/img/logos/ ;
+     - la police JetBrains Mono (assets/fonts/), distribuée sous
+       licence SIL Open Font License 1.1 (voir assets/fonts/OFL.txt).
+
+7. DROIT APPLICABLE
+   La présente licence est régie par le droit français. Tout litige
+   relatif à son interprétation ou à son exécution relève des
+   tribunaux français compétents.
+
+====================================================================
+ENGLISH VERSION (summary — the French version prevails)
+====================================================================
 
 Copyright (c) 2026 Corvus Mind. All rights reserved.
-No license is granted to copy, modify, distribute or reuse any part of this
-repository without prior written permission. Third-party logos, badges and the
-JetBrains Mono font (SIL OFL 1.1) remain the property of their respective owners.
+
+All content of this repository — source code, texts, layout, visual
+identity, the "Corvus Mind" name and the raven logo — is the
+exclusive property of the Corvus Mind team and is protected by
+copyright and trademark law.
+
+No license or right of use is granted. Viewing the repository or the
+site, the ability to "view source" in a browser, or forking on
+GitHub grant NO reuse rights. Without Corvus Mind's prior written
+permission it is prohibited to copy, modify, translate, distribute,
+publish, host, or make commercial use of any part of this
+repository, to use the "Corvus Mind" name, raven logo or visual
+identity, or to remove these copyright notices.
+
+Third-party logos/badges (assets/img/logos/) and the JetBrains Mono
+font (SIL OFL 1.1, assets/fonts/) remain the property of their
+respective owners. Governed by French law.
+
+Permission requests: via the site contact form
+(https://shsh-commits.github.io/corvusmind/#contact).
