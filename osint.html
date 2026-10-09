@@ -1,0 +1,128 @@
+---
+layout: default
+title: "L'OSINT"
+permalink: /osint/
+description: "L'OSINT expliqué par Corvus Mind : définition, disciplines (SOCMINT, GEOINT, IMINT…), cycle du renseignement, éthique et cadre légal."
+---
+<section class="sec osint-hero">
+  <p class="k">RENSEIGNEMENT EN SOURCES OUVERTES</p>
+  <h1 class="osint-title">L'OSINT</h1>
+  <p class="lead">L'<strong>OSINT</strong> (<em>Open Source INTelligence</em>) est l'art de collecter, recouper et analyser de l'information <strong>publiquement accessible</strong> pour répondre à une question. Pas de piratage, pas d'intrusion : uniquement ce que n'importe qui peut consulter légalement — mais lu avec méthode.</p>
+  <div class="btns">
+    <a class="btn" href="{{ '/toolbox/' | relative_url }}">Voir la toolbox</a>
+    <a class="btn ghost" href="{{ '/#palmares' | relative_url }}">Nos résultats</a>
+  </div>
+</section>
+
+<section class="sec">
+  <p class="k">LE PRINCIPE</p>
+  <h2>Transformer du public en renseignement</h2>
+  <p class="lead osint-wide">Une donnée seule ne vaut rien. L'OSINT consiste à assembler des fragments épars — une photo, un pseudo, une date, un nom de domaine — jusqu'à ce qu'ils racontent quelque chose de vérifiable. Trois règles guident tout le travail :</p>
+  <div class="grid osint-rules">
+    <article class="card">
+      <div class="ic-wrap">
+        <svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      </div>
+      <h3>Sources ouvertes</h3>
+      <small>On n'exploite que ce qui est public et légalement accessible. Aucune intrusion, aucun contournement d'accès.</small>
+    </article>
+    <article class="card">
+      <div class="ic-wrap">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
+      </div>
+      <h3>Recoupement</h3>
+      <small>Une info n'est retenue que confirmée par au moins deux sources indépendantes. Un indice unique est une piste, pas une preuve.</small>
+    </article>
+    <article class="card">
+      <div class="ic-wrap">
+        <svg viewBox="0 0 24 24" class="ic"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h3>Traçabilité</h3>
+      <small>Chaque conclusion est documentée : source, date, capture. Ce qui n'est pas sourcé n'existe pas.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <p class="k">SPÉCIALITÉS</p>
+  <h2>Les disciplines de l'OSINT</h2>
+  <p class="lead osint-wide">L'OSINT se décline en sous-domaines complémentaires. Une enquête sérieuse en combine presque toujours plusieurs.</p>
+  <div class="grid disc-grid">
+    <article class="card disc">
+      <span class="disc-tag">SOCMINT</span>
+      <h3>Réseaux sociaux</h3>
+      <small>Analyse des traces laissées sur les plateformes : profils, publications, abonnements, métadonnées. Le pseudo réutilisé est souvent le meilleur pont entre deux identités.</small>
+    </article>
+    <article class="card disc">
+      <span class="disc-tag">GEOINT</span>
+      <h3>Géolocalisation</h3>
+      <small>Déterminer où une image a été prise à partir d'indices visuels : enseignes, architecture, végétation, ombres, panneaux. Recherche inversée et cartographie font le reste.</small>
+    </article>
+    <article class="card disc">
+      <span class="disc-tag">IMINT</span>
+      <h3>Analyse d'images</h3>
+      <small>Lire une image au-delà de son sujet : métadonnées EXIF, recherche inversée, détection de montage, extraction de détails. Vérifier l'authenticité avant d'exploiter.</small>
+    </article>
+    <article class="card disc">
+      <span class="disc-tag">PERSONNES</span>
+      <h3>Recherche de personnes</h3>
+      <small>Relier email, pseudo, numéro et comptes pour reconstituer une empreinte numérique, dans le respect du cadre légal. Pivots d'un identifiant à l'autre.</small>
+    </article>
+    <article class="card disc">
+      <span class="disc-tag">WEBINT</span>
+      <h3>Web &amp; infrastructure</h3>
+      <small>Cartographier un site : sous-domaines, certificats, DNS, technologies, historique. Comprendre ce qui est exposé sans jamais y toucher.</small>
+    </article>
+    <article class="card disc">
+      <span class="disc-tag">CHRONO</span>
+      <h3>Chronolocalisation</h3>
+      <small>Dater un événement ou une image : position du soleil, météo, archives, versions d'une page dans le temps. Le « quand » vaut autant que le « où ».</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <p class="k">MÉTHODE</p>
+  <h2>Le cycle du renseignement</h2>
+  <p class="lead osint-wide">On n'improvise pas une enquête. Elle suit un cycle que l'on reparcourt tant que la réponse n'est pas solide.</p>
+  <ol class="cycle">
+    <li class="cy-step"><span class="cy-n">01</span><div><strong>Orientation</strong><p>Définir précisément la question. Que cherche-t-on, pourquoi, et à quoi ressemble une réponse valide ?</p></div></li>
+    <li class="cy-step"><span class="cy-n">02</span><div><strong>Collecte</strong><p>Rassembler les sources ouvertes pertinentes : moteurs, réseaux, archives, bases publiques. Large d'abord, précis ensuite.</p></div></li>
+    <li class="cy-step"><span class="cy-n">03</span><div><strong>Traitement</strong><p>Nettoyer, décoder, organiser. Extraire les métadonnées, traduire, convertir, classer les indices.</p></div></li>
+    <li class="cy-step"><span class="cy-n">04</span><div><strong>Analyse</strong><p>Recouper, confronter les hypothèses, chercher la preuve contraire. Une piste ne devient fait qu'une fois confirmée.</p></div></li>
+    <li class="cy-step"><span class="cy-n">05</span><div><strong>Diffusion</strong><p>Restituer clairement : conclusion, niveau de confiance, sources datées. Le writeup fait partie du travail.</p></div></li>
+  </ol>
+</section>
+
+<section class="sec osint-ethic">
+  <p class="k">CADRE</p>
+  <h2>Éthique &amp; légalité</h2>
+  <div class="grid">
+    <article class="card ethic">
+      <h3>Ce que l'OSINT est</h3>
+      <ul class="tick">
+        <li>Consultation de sources <strong>publiques</strong> et légalement accessibles</li>
+        <li>Observation sans interaction ni intrusion</li>
+        <li>Documentation rigoureuse et respect du RGPD</li>
+        <li>Au service d'un objectif légitime (CTF, recherche, vérification)</li>
+      </ul>
+    </article>
+    <article class="card ethic no">
+      <h3>Ce que l'OSINT n'est pas</h3>
+      <ul class="cross">
+        <li>Accéder à un compte ou contourner une protection</li>
+        <li>Usurper une identité pour soutirer des informations</li>
+        <li>Harceler, surveiller ou cibler une personne privée</li>
+        <li>Collecter des données sensibles sans finalité légitime</li>
+      </ul>
+    </article>
+  </div>
+  <p class="lead osint-wide ethic-note">La frontière est simple : si obtenir l'information demande de tromper quelqu'un, de forcer un accès ou de violer sa vie privée, ce n'est plus de l'OSINT. Corvus Mind s'y tient strictement.</p>
+</section>
+
+<section class="sec osint-cta">
+  <p class="k">PASSER À LA PRATIQUE</p>
+  <h2>La boîte à outils</h2>
+  <p class="lead osint-wide">Chaque discipline a ses outils. Nous avons rassemblé les plus utiles — avec, pour chacun, ce que la version gratuite permet et ce que le premium débloque.</p>
+  <div class="btns"><a class="btn" href="{{ '/toolbox/' | relative_url }}">Ouvrir la toolbox</a></div>
+</section>

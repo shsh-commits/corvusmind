@@ -1,0 +1,250 @@
+---
+layout: default
+title: "Toolbox"
+permalink: /toolbox/
+description: "Toolbox OSINT de Corvus Mind : les sites et logiciels les plus utiles par discipline, avec pour chacun ce que la version gratuite permet et ce que le premium débloque."
+---
+<section class="sec tb-intro">
+  <p class="k">BOÎTE À OUTILS</p>
+  <h1 class="osint-title">Toolbox OSINT</h1>
+  <p class="lead">Une sélection d'outils réellement utiles, classés par usage. Pour chacun : à quoi il sert, et — quand c'est un service payant — <strong>ce que la version gratuite permet</strong> face à ce que le premium débloque.</p>
+  <div class="legend">
+    <span class="tier free">Gratuit</span>
+    <span class="tier oss">Open source</span>
+    <span class="tier freemium">Freemium</span>
+    <span class="tier premium">Payant</span>
+  </div>
+  <p class="tb-note">⚠️ L'OSINT se pratique dans un cadre légal et éthique : uniquement des sources publiques, jamais d'intrusion. Voir <a href="{{ '/osint/' | relative_url }}">la présentation de l'OSINT</a>.</p>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">POUR COMMENCER</p>
+  <h2>Points de départ &amp; frameworks</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://osintframework.com/" target="_blank" rel="noopener">OSINT Framework</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Arborescence de liens vers des centaines d'outils, classés par objectif (email, username, image…). Le réflexe « par où commencer ».</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://inteltechniques.com/tools/" target="_blank" rel="noopener">IntelTechniques</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Les outils et la méthodo de Michael Bazzell, référence du domaine.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> les outils de recherche en ligne sont libres ; les livres et formations approfondies sont payants.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://docs.google.com/spreadsheets/d/18rtqh8EG2q1xBo2cLNyhIDuK9jrPGwYr9DI2UncoqJQ/" target="_blank" rel="noopener">Bellingcat Toolkit</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Le tableur d'outils maintenu par Bellingcat : sélection vérifiée et commentée par des enquêteurs pros.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://start.me/p/m6XQ08/osint" target="_blank" rel="noopener">start.me OSINT</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Pages de favoris OSINT partagées par la communauté, prêtes à l'emploi.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> consultation libre ; les fonctions d'équipe/privées sont payantes.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">RECHERCHE</p>
+  <h2>Moteurs &amp; recherche avancée</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.google.com/advanced_search" target="_blank" rel="noopener">Google Dorks</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Les opérateurs (<code>site:</code>, <code>filetype:</code>, <code>intitle:</code>, <code>""</code>) transforment Google en outil chirurgical. La compétence la plus rentable de l'OSINT.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://yandex.com/" target="_blank" rel="noopener">Yandex</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Souvent supérieur à Google pour la recherche d'images, de visages et les zones hors UE/US. Indispensable en complément.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.startpage.com/" target="_blank" rel="noopener">Startpage / DuckDuckGo</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Recherche sans personnalisation ni tracking : utile pour sortir de sa « bulle » et voir des résultats neutres.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://dorksearch.com/" target="_blank" rel="noopener">DorkSearch</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Générateur de dorks assisté : construit la requête avancée à ta place.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">IDENTIFIANTS</p>
+  <h2>Email, pseudo &amp; fuites</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://github.com/megadose/holehe" target="_blank" rel="noopener">Holehe</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">Teste si une adresse email est enregistrée sur des dizaines de sites, sans alerter la cible. En ligne de commande.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://epieos.com/" target="_blank" rel="noopener">Epieos</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Reverse email &amp; téléphone : comptes liés, infos de compte Google, etc.</small>
+      <small class="diff"><span>Gratuit vs premium :</span> recherche ponctuelle gratuite ; le premium ouvre le volume, l'historique et davantage de sources.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://hunter.io/" target="_blank" rel="noopener">Hunter.io</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Trouve les adresses email associées à un domaine et leur format.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> petit quota de recherches/vérifications par mois en gratuit ; les plans payants augmentent fortement le volume et l'export.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Indique si une adresse apparaît dans des fuites de données connues.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> vérification manuelle gratuite sur le site ; l'accès par API (automatisation) est payant.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://github.com/soxoj/maigret" target="_blank" rel="noopener">Maigret / Sherlock</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">Recherchent un pseudo sur des centaines de plateformes et compilent les profils trouvés.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://whatsmyname.app/" target="_blank" rel="noopener">WhatsMyName</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Énumération de username directement dans le navigateur, sans rien installer.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">IMINT</p>
+  <h2>Images &amp; vérification</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://images.google.com/" target="_blank" rel="noopener">Google Lens / Images</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Recherche d'image inversée et reconnaissance d'objets/texte. Première étape sur toute photo.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://yandex.com/images/" target="_blank" rel="noopener">Yandex Images</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Le meilleur moteur de reverse image pour les lieux et les visages. À tester systématiquement.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://tineye.com/" target="_blank" rel="noopener">TinEye</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Reverse image qui retrouve la <em>première</em> apparition d'une image en ligne (utile pour dater).</small>
+      <small class="diff"><span>Gratuit vs payant :</span> recherche web gratuite ; l'API et le suivi en volume sont payants.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" target="_blank" rel="noopener">InVID / WeVerify</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Extension de vérification : découpe une vidéo en images-clés, reverse search, lecture des métadonnées, loupe.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://fotoforensics.com/" target="_blank" rel="noopener">FotoForensics</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Analyse ELA (Error Level Analysis) pour repérer les zones retouchées d'une image.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://29a.ch/photo-forensics/" target="_blank" rel="noopener">Forensically</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Boîte à outils d'analyse d'image dans le navigateur : clone detection, loupe, métadonnées, niveaux.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">GEOINT</p>
+  <h2>Géolocalisation &amp; cartographie</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://earth.google.com/" target="_blank" rel="noopener">Google Earth / Street View</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">La référence pour confirmer un lieu : vue satellite, historique, immersion au sol.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.suncalc.org/" target="_blank" rel="noopener">SunCalc</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Position du soleil à une date/heure : permet de dater une photo via la longueur et l'angle des ombres.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://overpass-turbo.eu/" target="_blank" rel="noopener">Overpass Turbo</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">Interroge OpenStreetMap : « tous les stades / châteaux d'eau / ponts dans cette zone ». Puissant pour restreindre une recherche.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://what3words.com/" target="_blank" rel="noopener">what3words</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Convertit trois mots en coordonnées précises à 3 m, et inversement.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://geohints.com/" target="_blank" rel="noopener">GeoHints</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Catalogue d'indices visuels par pays : plaques, bornes, poteaux, signalétique. L'allié de la géoloc « à l'œil ».</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap / Yandex Maps</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Cartes complémentaires de Google, souvent plus riches hors Europe de l'Ouest.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">WEBINT</p>
+  <h2>Domaines &amp; infrastructure</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.shodan.io/" target="_blank" rel="noopener">Shodan</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Le « moteur de recherche des objets connectés » : serveurs, caméras, services exposés sur Internet.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> compte gratuit très limité (peu de résultats, filtres bridés) ; un accès « membership » débloque filtres et résultats, et l'API complète est payante. Remise fréquente pour les adresses <code>.edu</code>.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://search.censys.io/" target="_blank" rel="noopener">Censys</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Vue détaillée des hôtes et certificats exposés. Complément de Shodan.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> quota de requêtes gratuit ; les recherches avancées et le volume passent en payant.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://crt.sh/" target="_blank" rel="noopener">crt.sh</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Transparence des certificats TLS : révèle les sous-domaines d'une cible. Gratuit et sans compte.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://dnsdumpster.com/" target="_blank" rel="noopener">DNSdumpster</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Cartographie DNS et sous-domaines d'un domaine, avec schéma.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://urlscan.io/" target="_blank" rel="noopener">urlscan.io</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Analyse une URL dans un bac à sable : captures, requêtes, technologies, sans la visiter soi-même.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> scans publics gratuits ; les scans privés et l'API en volume sont payants.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://web.archive.org/" target="_blank" rel="noopener">Wayback Machine</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Archive du web : retrouve l'état d'une page à une date passée. Essentiel pour prouver ce qui a été publié puis supprimé.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">ANALYSE</p>
+  <h2>Cartographie de liens &amp; automatisation</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.maltego.com/" target="_blank" rel="noopener">Maltego</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Le standard de la visualisation de liens : relie emails, domaines, personnes, comptes en un graphe interactif.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> la Community Edition est gratuite mais bridée (inscription obligatoire, résultats limités par transform, usage non commercial) ; les éditions Pro/Enterprise lèvent ces limites.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.spiderfoot.net/" target="_blank" rel="noopener">SpiderFoot</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">Automatise la collecte : on donne une cible (email, IP, domaine) et il interroge des centaines de sources.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> l'outil open source est complet et gratuit ; la version cloud hébergée (HX) est payante.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://lampyre.io/" target="_blank" rel="noopener">Lampyre</a></h3><span class="tier freemium">Freemium</span></div>
+      <small class="tool-desc">Analyse et visualisation de données d'enquête, avec requêtes prêtes à l'emploi.</small>
+      <small class="diff"><span>Gratuit vs payant :</span> installation gratuite ; les requêtes qui consomment des sources fonctionnent avec des crédits payants.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://github.com/lanmaster53/recon-ng" target="_blank" rel="noopener">Recon-ng</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">Framework de reconnaissance en ligne de commande, structuré comme Metasploit. Gratuit et modulaire.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-cat">
+  <p class="k">OPSEC</p>
+  <h2>Environnement &amp; hygiène d'enquête</h2>
+  <div class="grid tb-grid">
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.virtualbox.org/" target="_blank" rel="noopener">Machine virtuelle</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">VirtualBox : isole chaque investigation dans un environnement jetable, séparé de ton système personnel.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://tails.net/" target="_blank" rel="noopener">Tails</a></h3><span class="tier oss">Open source</span></div>
+      <small class="tool-desc">OS amnésique sur clé USB, tout le trafic passant par Tor. Pour les enquêtes qui exigent l'anonymat.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://www.torproject.org/" target="_blank" rel="noopener">Tor Browser</a></h3><span class="tier free">Gratuit</span></div>
+      <small class="tool-desc">Navigation anonymisée et accès aux services <code>.onion</code>. À manier en connaissant ses limites.</small>
+    </article>
+    <article class="card tool">
+      <div class="tool-head"><h3><a href="https://inteltechniques.com/blog/2020/07/27/the-privacy-security-osint-show-episode-179-sock-puppet-accounts/" target="_blank" rel="noopener">Sock puppets</a></h3><span class="tier free">Méthode</span></div>
+      <small class="tool-desc">Comptes dédiés à l'enquête, jamais les comptes personnels : on ne mélange jamais l'identité de l'enquêteur et celle du terrain.</small>
+    </article>
+  </div>
+</section>
+
+<section class="sec tb-outro">
+  <p class="lead osint-wide">Un outil ne remplace pas la méthode. Le bon réflexe reste toujours le même : partir d'un indice, recouper, documenter. Les techniques détaillées sont dans nos <a href="{{ '/news/' | relative_url }}">writeups</a>.</p>
+</section>
