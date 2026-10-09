@@ -1,3 +1,4 @@
-{%- comment -%} Renvoie l'adresse échappée si elle commence par http(s)://, sinon rien {%- endcomment -%}
-{%- assign _u = include.u | strip -%}{%- assign _p = _u | slice: 0, 8 | downcase -%}
-{%- if _p == "https://" or _p contains "http://" -%}{{ _u | escape }}{%- endif -%}
+{%- comment -%} Renvoie l'adresse échappée si elle commence strictement par http:// ou https:// (casse ignorée), sinon rien {%- endcomment -%}
+{%- assign _u = include.u | strip -%}{%- assign _l = _u | downcase -%}
+{%- assign _p8 = _l | slice: 0, 8 -%}{%- assign _p7 = _l | slice: 0, 7 -%}
+{%- if _p8 == "https://" or _p7 == "http://" -%}{{ _u | escape }}{%- endif -%}

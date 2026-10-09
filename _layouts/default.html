@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 {% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% elsif page.layout == "post" %}{% assign page_title = page.title | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
 <title>{{ page_title | escape }}</title>

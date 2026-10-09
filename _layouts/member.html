@@ -51,7 +51,8 @@ layout: default
         {% capture href %}{% include safe-url.html u=b.url %}{% endcapture %}
         {% if href != "" %}<a href="{{ href }}" target="_blank" rel="noopener">{% endif %}
           {% if b.img and b.img != "" %}
-            <img src="{{ b.img | relative_url | escape }}" alt="{{ b.title | escape }}">
+            {% if b.img contains "://" %}{% assign src = b.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: b.img | relative_url | escape %}{% endif %}
+            <img src="{{ src }}" alt="{{ b.title | escape }}">
           {% else %}
             <div class="badge-ph">{{ b.title | slice: 0 | escape }}</div>
           {% endif %}
@@ -79,7 +80,7 @@ layout: default
     <li>
       {% capture href %}{% include safe-url.html u=c.url %}{% endcapture %}
       {% if href != "" %}<a class="cert-item" href="{{ href }}" target="_blank" rel="noopener">{% else %}<div class="cert-item">{% endif %}
-        {% if c.img and c.img != "" %}<img class="cert-ic" src="{{ c.img | relative_url | escape }}" alt="">{% else %}<span class="cert-ic">{{ c.title | slice: 0 | escape }}</span>{% endif %}
+        {% if c.img and c.img != "" %}{% if c.img contains "://" %}{% assign src = c.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: c.img | relative_url | escape %}{% endif %}<img class="cert-ic" src="{{ src }}" alt="">{% else %}<span class="cert-ic">{{ c.title | slice: 0 | escape }}</span>{% endif %}
         <span class="cert-txt"><strong>{{ c.title | escape }}</strong>{% if c.issuer and c.issuer != "" %}<small>{{ c.issuer | escape }}</small>{% endif %}</span>
       {% if href != "" %}</a>{% else %}</div>{% endif %}
     </li>

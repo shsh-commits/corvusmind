@@ -3,7 +3,7 @@
 # rank   : classement
 # membres : noms identiques à ceux de membres.yml
 # logos  : organisations participantes. img = fichier dans assets/img/logos/
-#          (ou URL complète). img vide = emplacement avec l'initiale du nom.
+#          (images externes bloquées par la CSP). img vide = emplacement avec l'initiale du nom.
 #          url = lien ouvert au clic sur le logo (facultatif).
 - name: "DeepThreats 2026"
   rank: "25e/491"
@@ -11,13 +11,13 @@
   membres: ["Mabimzaa", "Sirius", "Shakado"]
   logos:
     - name: "Campus OSINT"
-      img: "https://www.defense.gouv.fr/sites/default/files/styles/16_9_md/public/dga/canva_campus%20osint.jpg?itok=-Vskbhi6"
+      img: "campus-osint.jpg"
       url: "https://www.defense.gouv.fr/dga/actualites/inauguration-du-campus-osint-delegue-general-larmement" 
     - name: "DGA"
-      img: "https://www.defense.gouv.fr/sites/default/files/styles/homepage_medallion/public/dga/Logotype_DGA_medaillon2.jpg?itok=-wjFdwys"
+      img: "dga.jpg"
       url: "https://www.defense.gouv.fr/dga"
     - name: "Hackolyte"
-      img: "https://hackolyte.fr/wp-content/uploads/2024/09/cropped-cropped-logo-66x66.png"
+      img: "hackolyte.png"
       url: "https://hackolyte.fr/"  
 - name: "Opération Culot - Bpifrance"
   rank: "3e/223 (Distanciel) - 5e/24 (Présentiel)"
@@ -25,12 +25,12 @@
   membres: ["Mabimzaa", "Sirius", "Shakado", "Noje_77"]
   logos:
     - name: "Bpifrance"
-      img: "https://ctf-bpifrance.io/files/efe7549bd79c4d04d4b3843e56bb0607/miniature.png"
+      img: "bpifrance.png"
       url: "https://io.bpifrance.fr/"
     - name: "Les Blaireaux des Légendes"
-      img: "https://ctf-bpifrance.io/files/030c19758757b2934cd53bcb2f07cef2/BDL.jpg"
+      img: "blaireaux-des-legendes.jpg"
       url: "https://www.linkedin.com/company/bdl-osint/"  
     - name: "Hackolyte"
-      img: "https://hackolyte.fr/wp-content/uploads/2024/09/cropped-cropped-logo-66x66.png"
+      img: "hackolyte.png"
       url: "https://hackolyte.fr/"
     
