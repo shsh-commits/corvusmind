@@ -5,7 +5,18 @@ layout: default
   <p class="k">ÉQUIPE OSINT · RENSEIGNEMENT EN SOURCES OUVERTES</p>
   <h1>CORVUS MIND</h1>
   <p class="lead">Investigations, géolocalisation, SOCMINT et compétitions CTF OSINT.</p>
-  <div class="btns"><a class="btn" href="#news">News</a><a class="btn ghost" href="#palmares">Palmarès</a><a class="btn ghost" href="#membres">L'équipe</a><a class="btn ghost" href="#contact">Contact</a></div>
+  <div class="btns"><a class="btn" href="{{ '/palmares/' | relative_url }}">Palmarès</a><a class="btn ghost" href="{{ '/osint/' | relative_url }}">L'OSINT</a><a class="btn ghost" href="{{ '/#contact' | relative_url }}">Contact</a></div>
+</section>
+
+<section class="sec">
+  <p class="k">ACCÈS RAPIDE</p>
+  <h2>Explorer</h2>
+  <div class="grid nav-cards">
+    <a class="card nav-card" href="{{ '/palmares/' | relative_url }}"><h3>Palmarès</h3><small>Nos résultats en compétition.</small></a>
+    <a class="card nav-card" href="{{ '/equipe/' | relative_url }}"><h3>L'équipe</h3><small>Les membres de Corvus Mind.</small></a>
+    <a class="card nav-card" href="{{ '/osint/' | relative_url }}"><h3>L'OSINT</h3><small>Disciplines, méthode et éthique.</small></a>
+    <a class="card nav-card" href="{{ '/toolbox/' | relative_url }}"><h3>Toolbox</h3><small>Nos outils, gratuit ou premium.</small></a>
+  </div>
 </section>
 
 <section id="news" class="sec news">
@@ -13,65 +24,7 @@ layout: default
     <p class="k">NEWS</p>
     <a class="btn news-all" href="{{ '/news/' | relative_url }}">Voir tous les articles</a>
   </div>
-  {% if site.posts.size > 0 %}{% assign recent = site.posts | slice: 0, 4 %}{% include news-list.html posts=recent %}{% else %}<p class="lead">Premières publications à venir.</p>{% endif %}
-</section>
-
-<section id="palmares" class="sec">
-  <p class="k">COMPÉTITIONS</p>
-  <h2>Palmarès</h2>
-  <div class="grid">
-  {% for r in site.data.palmares %}
-    <article class="card palm">
-      <div class="rk">{{ r.name | escape }}</div>
-      <h3>{{ r.rank | escape }}</h3>
-      <small>{{ r.meta | escape }}</small>
-      {% if r.membres %}<div class="team">{% for n in r.membres %}<span>@{{ n | escape }}</span>{% endfor %}</div>{% endif %}
-      {%- comment -%} Writeup : champ « writeup » sinon détection auto de assets/writeups/<nom-slugifié>.pdf {%- endcomment -%}
-      {% assign wu = "" %}
-      {% if r.writeup and r.writeup != "" %}
-        {% if r.writeup contains "://" %}{% capture wu %}{% include safe-url.html u=r.writeup %}{% endcapture %}{% else %}{% assign wu = '/assets/writeups/' | append: r.writeup | relative_url | escape %}{% endif %}
-      {% else %}
-        {% assign wu_slug = r.name | slugify: 'latin' %}{% assign wu_path = '/assets/writeups/' | append: wu_slug | append: '.pdf' %}
-        {% for f in site.static_files %}{% if f.path == wu_path %}{% assign wu = wu_path | relative_url | escape %}{% break %}{% endif %}{% endfor %}
-      {% endif %}
-      <div class="orgs">
-        {% if r.logos and r.logos.size > 0 %}
-        {% for o in r.logos %}
-          {% capture href %}{% include safe-url.html u=o.url %}{% endcapture %}
-          {% if href != "" %}<a class="org-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ o.name | escape }}">{% endif %}
-          {% if o.img and o.img != "" %}
-            {% if o.img contains "://" %}{% assign src = o.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: o.img | relative_url %}{% endif %}
-            <img class="org" src="{{ src }}" alt="{{ o.name | escape }}" title="{{ o.name | escape }}">
-          {% else %}
-            <span class="org org-ph" title="{{ o.name | escape }}">{{ o.name | slice: 0 | escape }}</span>
-          {% endif %}
-          {% if href != "" %}</a>{% endif %}
-        {% endfor %}
-        {% endif %}
-        {% if wu != "" %}<a class="wu" href="{{ wu }}" target="_blank" rel="noopener" title="Writeup {{ r.name | escape }} (PDF)">Writeup</a>{% endif %}
-      </div>
-    </article>
-  {% endfor %}
-  </div>
-</section>
-
-<section id="membres" class="sec">
-  <p class="k">ÉQUIPE</p>
-  <h2>Membres</h2>
-  <div class="grid">
-  {% assign members = site.members | sort: 'order' %}
-  {% for m in members %}
-    <article class="card member">
-      {% if m.photo and m.photo != "" %}{% if m.photo contains "://" %}{% assign photo = m.photo | escape %}{% else %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}{% endif %}<img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
-      {% else %}<div class="av">{{ m.name | slice: 0 | escape }}</div>{% endif %}
-      <h3>{{ m.name | escape }}</h3>
-      <small>{{ m.role | escape }}</small>
-      <div class="links">
-        <a class="detail" href="{{ m.url | relative_url }}">Détail</a>
-      </div>
-    </article>
-  {% endfor %}
-  </div>
+  {% if site.posts.size > 0 %}{% assign recent = site.posts | slice: 0, 3 %}{% include news-list.html posts=recent %}{% else %}<p class="lead">Premières publications à venir.</p>{% endif %}
 </section>
 
 <section id="contact" class="sec">

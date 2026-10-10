@@ -2,7 +2,7 @@
 layout: default
 ---
 <section class="sec member-page">
-  <p class="k top-row"><a class="back" href="{{ '/#membres' | relative_url }}">Retour à l'équipe</a>
+  <p class="k top-row"><a class="back" href="{{ '/equipe/' | relative_url }}">Retour à l'équipe</a>
     {% if site.repository and site.repository != "" %}<a class="edit" href="https://github.com/{{ site.repository }}/edit/{{ site.branch | default: 'main' }}/{{ page.path }}" target="_blank" rel="noopener">Modifier mon profil</a>{% endif %}</p>
 
   <div class="profile">

@@ -17,7 +17,7 @@ Deux compétitions marquantes nous ont lancés :
 - **DeepThreats 2026** (Campus OSINT - DGA) : 25ᵉ sur 491 équipes.
 - **Opération Culot - Bpifrance (#BIG2026)** : 3ᵉ sur 223 en distanciel, 5ᵉ sur 24 en présentiel.
 
-Le détail des compétitions et les organisations partenaires sont à retrouver dans le [palmarès]({{ '/#palmares' | relative_url }}).
+Le détail des compétitions et les organisations partenaires sont à retrouver dans le [palmarès]({{ '/palmares/' | relative_url }}).
 
 ## Ce que vous trouverez ici
 
@@ -25,7 +25,7 @@ Le site va s'étoffer progressivement. Au programme :
 
 - une [présentation de l'OSINT]({{ '/osint/' | relative_url }}) : disciplines, méthode et cadre éthique ;
 - une [toolbox]({{ '/toolbox/' | relative_url }}) des outils que nous utilisons, avec pour chacun la différence entre version gratuite et premium ;
-- la présentation des [membres]({{ '/#membres' | relative_url }}) de l'équipe ;
+- la présentation des [membres]({{ '/equipe/' | relative_url }}) de l'équipe ;
 - et, bientôt, nos **writeups** de CTF et des articles techniques.
 
 Merci de votre visite. À très vite pour la suite.
