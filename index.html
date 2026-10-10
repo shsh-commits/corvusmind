@@ -8,6 +8,37 @@ layout: default
   <div class="btns"><a class="btn" href="{{ '/palmares/' | relative_url }}">Palmarès</a><a class="btn ghost" href="{{ '/osint/' | relative_url }}">L'OSINT</a><a class="btn ghost" href="{{ '/#contact' | relative_url }}">Contact</a></div>
 </section>
 
+<section class="sec home-stats">
+  <div class="stats">
+    <div class="stat"><span class="num">{{ site.members.size }}</span><span class="lbl">membres</span></div>
+    <div class="stat"><span class="num">{{ site.data.palmares.size }}</span><span class="lbl">compétitions OSINT</span></div>
+    <div class="stat"><span class="num">3ᵉ/223</span><span class="lbl">meilleur classement</span></div>
+  </div>
+  <p class="lead">Corvus Mind recoupe des sources publiques (une photo, un pseudo, une archive) pour répondre à une question, toujours dans le cadre légal.</p>
+</section>
+
+<section class="sec">
+  <p class="k">NOTRE MÉTHODE</p>
+  <h2>Comment on travaille</h2>
+  <div class="grid osint-rules">
+    <article class="card">
+      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
+      <h3>Sources ouvertes</h3>
+      <small>On n'exploite que ce qui est public et légalement accessible. Aucune intrusion.</small>
+    </article>
+    <article class="card">
+      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></div>
+      <h3>Recoupement</h3>
+      <small>Une info n'est retenue que confirmée par au moins deux sources indépendantes.</small>
+    </article>
+    <article class="card">
+      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>Traçabilité</h3>
+      <small>Chaque conclusion est documentée : source, date, capture.</small>
+    </article>
+  </div>
+</section>
+
 <section class="sec">
   <p class="k">ACCÈS RAPIDE</p>
   <h2>Explorer</h2>
