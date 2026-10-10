@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🪶 Corvus Mind
+# 🐦‍⬛ Corvus Mind
 
 **Équipe francophone de renseignement en sources ouvertes (OSINT).**
 
 Investigations · Géolocalisation · SOCMINT · Compétitions CTF OSINT
 
-🌐 **[Voir le site](https://shsh-commits.github.io/corvusmind/)**
+**[Voir le site](https://shsh-commits.github.io/corvusmind/)**
 
 </div>
 
@@ -20,12 +20,12 @@ Une règle guide tout notre travail : **ne jamais exploiter que des sources publ
 
 ## Ce qu'on fait
 
-- **🔎 Recherche de personnes** : reconstituer une empreinte numérique à partir d'identifiants publics.
-- **🗺️ Géolocalisation (GEOINT)** : retrouver un lieu à partir des indices d'une image.
-- **📱 SOCMINT** : analyse des traces laissées sur les réseaux sociaux.
-- **🖼️ Analyse d'images (IMINT)** : métadonnées, recherche inversée, vérification.
-- **🕰️ Chronolocalisation** : dater un événement ou une photo.
-- **🏴 Compétitions** : CTF OSINT, individuels et en équipe.
+- **Recherche de personnes** : reconstituer une empreinte numérique à partir d'identifiants publics.
+- **Géolocalisation (GEOINT)** : retrouver un lieu à partir des indices d'une image.
+- **SOCMINT** : analyse des traces laissées sur les réseaux sociaux.
+- **Analyse d'images (IMINT)** : métadonnées, recherche inversée, vérification.
+- **Chronolocalisation** : dater un événement ou une photo.
+- **Compétitions** : CTF OSINT, individuels et en équipe.
 
 ## Palmarès
 
