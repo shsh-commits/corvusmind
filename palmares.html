@@ -1,0 +1,44 @@
+---
+layout: default
+title: Palmarès
+permalink: /palmares/
+description: "Palmarès de l'équipe OSINT Corvus Mind : résultats en compétitions CTF 100 % sources ouvertes."
+---
+<section class="sec">
+  <p class="k">COMPÉTITIONS</p>
+  <h2>Palmarès</h2>
+  <div class="grid">
+  {% for r in site.data.palmares %}
+    <article class="card palm">
+      <div class="rk">{{ r.name | escape }}</div>
+      <h3>{{ r.rank | escape }}</h3>
+      <small>{{ r.meta | escape }}</small>
+      {% if r.membres %}<div class="team">{% for n in r.membres %}<span>@{{ n | escape }}</span>{% endfor %}</div>{% endif %}
+      {%- comment -%} Writeup : champ « writeup » sinon détection auto de assets/writeups/<nom-slugifié>.pdf {%- endcomment -%}
+      {% assign wu = "" %}
+      {% if r.writeup and r.writeup != "" %}
+        {% if r.writeup contains "://" %}{% capture wu %}{% include safe-url.html u=r.writeup %}{% endcapture %}{% else %}{% assign wu = '/assets/writeups/' | append: r.writeup | relative_url | escape %}{% endif %}
+      {% else %}
+        {% assign wu_slug = r.name | slugify: 'latin' %}{% assign wu_path = '/assets/writeups/' | append: wu_slug | append: '.pdf' %}
+        {% for f in site.static_files %}{% if f.path == wu_path %}{% assign wu = wu_path | relative_url | escape %}{% break %}{% endif %}{% endfor %}
+      {% endif %}
+      <div class="orgs">
+        {% if r.logos and r.logos.size > 0 %}
+        {% for o in r.logos %}
+          {% capture href %}{% include safe-url.html u=o.url %}{% endcapture %}
+          {% if href != "" %}<a class="org-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ o.name | escape }}">{% endif %}
+          {% if o.img and o.img != "" %}
+            {% if o.img contains "://" %}{% assign src = o.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: o.img | relative_url %}{% endif %}
+            <img class="org" src="{{ src }}" alt="{{ o.name | escape }}" title="{{ o.name | escape }}">
+          {% else %}
+            <span class="org org-ph" title="{{ o.name | escape }}">{{ o.name | slice: 0 | escape }}</span>
+          {% endif %}
+          {% if href != "" %}</a>{% endif %}
+        {% endfor %}
+        {% endif %}
+        {% if wu != "" %}<a class="wu" href="{{ wu }}" target="_blank" rel="noopener" title="Writeup {{ r.name | escape }} (PDF)">Writeup</a>{% endif %}
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>

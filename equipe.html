@@ -1,0 +1,24 @@
+---
+layout: default
+title: L'équipe
+permalink: /equipe/
+description: "L'équipe OSINT Corvus Mind : les membres, leurs spécialités, badges et certifications."
+---
+<section class="sec">
+  <p class="k">ÉQUIPE</p>
+  <h2>Membres</h2>
+  <div class="grid">
+  {% assign members = site.members | sort: 'order' %}
+  {% for m in members %}
+    <article class="card member">
+      {% if m.photo and m.photo != "" %}{% if m.photo contains "://" %}{% assign photo = m.photo | escape %}{% else %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}{% endif %}<img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
+      {% else %}<div class="av">{{ m.name | slice: 0 | escape }}</div>{% endif %}
+      <h3>{{ m.name | escape }}</h3>
+      <small>{{ m.role | escape }}</small>
+      <div class="links">
+        <a class="detail" href="{{ m.url | relative_url }}">Détail</a>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>
