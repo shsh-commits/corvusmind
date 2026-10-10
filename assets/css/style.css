@@ -265,3 +265,7 @@ code{font-family:inherit;font-size:.92em;color:var(--ac);background:rgba(61,187,
 .sec:not(.member-page) > .k{text-align:center}
 .sec:not(.member-page) > h2{text-align:center}
 .sec:not(.member-page) > .lead{margin-left:auto;margin-right:auto;text-align:center}
+
+/* Blocs à largeur fixe recentrés sous leur titre (le texte interne reste à gauche) */
+.cycle{margin-left:auto;margin-right:auto}
+.form{margin-left:auto;margin-right:auto}
