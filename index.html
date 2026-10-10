@@ -8,34 +8,38 @@ layout: default
   <div class="btns"><a class="btn" href="{{ '/palmares/' | relative_url }}">Palmarès</a><a class="btn ghost" href="{{ '/osint/' | relative_url }}">L'OSINT</a><a class="btn ghost" href="{{ '/#contact' | relative_url }}">Contact</a></div>
 </section>
 
-<section class="sec home-stats">
-  <div class="stats">
-    <div class="stat"><span class="num">{{ site.members.size }}</span><span class="lbl">membres</span></div>
-    <div class="stat"><span class="num">{{ site.data.palmares.size }}</span><span class="lbl">compétitions OSINT</span></div>
-    <div class="stat"><span class="num">3ᵉ/223</span><span class="lbl">meilleur classement</span></div>
-  </div>
-  <p class="lead">Corvus Mind recoupe des sources publiques (une photo, un pseudo, une archive) pour répondre à une question, toujours dans le cadre légal.</p>
+<section class="sec credo">
+  <p class="k">L'ESPRIT OSINT</p>
+  <p class="credo-txt">Ce n'est pas l'information qui manque, c'est l'attention.<br>Là où les autres arrêtent de regarder, <span class="hl">l'enquête commence.</span></p>
 </section>
 
 <section class="sec">
-  <p class="k">NOTRE MÉTHODE</p>
-  <h2>Comment on travaille</h2>
-  <div class="grid osint-rules">
-    <article class="card">
-      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
-      <h3>Sources ouvertes</h3>
-      <small>On n'exploite que ce qui est public et légalement accessible. Aucune intrusion.</small>
-    </article>
-    <article class="card">
-      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></div>
-      <h3>Recoupement</h3>
-      <small>Une info n'est retenue que confirmée par au moins deux sources indépendantes.</small>
-    </article>
-    <article class="card">
-      <div class="ic-wrap"><svg viewBox="0 0 24 24" class="ic"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <h3>Traçabilité</h3>
-      <small>Chaque conclusion est documentée : source, date, capture.</small>
-    </article>
+  <div class="callout">
+    <p class="k">LE SAVIEZ-VOUS</p>
+    <p class="callout-txt">On estime souvent que <strong>80 à 90 % du renseignement</strong> exploité provient de sources ouvertes, et non de moyens secrets. L'essentiel est déjà public : encore faut-il savoir le lire.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <p class="k">ANATOMIE D'UNE ENQUÊTE</p>
+  <h2>D'un indice à une réponse</h2>
+  <ol class="flow">
+    <li><span class="flow-n">1</span><strong>Un indice</strong><small>Une photo, un pseudo, une date.</small></li>
+    <li><span class="flow-n">2</span><strong>Observation</strong><small>Détails visuels, métadonnées, langue.</small></li>
+    <li><span class="flow-n">3</span><strong>Recoupement</strong><small>On croise plusieurs sources indépendantes.</small></li>
+    <li><span class="flow-n">4</span><strong>Réponse</strong><small>Un lieu, une identité, vérifiés et datés.</small></li>
+  </ol>
+</section>
+
+<section class="sec">
+  <p class="k">MINI-DÉFI</p>
+  <h2>À toi de jouer</h2>
+  <div class="defi-box">
+    <p class="defi-q">Une photo prise en extérieur à midi. L'ombre du poteau est quasi inexistante. Que peux-tu déjà en déduire ?</p>
+    <details class="defi">
+      <summary class="btn">Révéler la réponse</summary>
+      <div class="defi-a">Une ombre quasi nulle à midi signifie que le soleil est presque à la verticale : on est donc <strong>proche de l'équateur</strong>, à une période proche de l'équinoxe. En OSINT, un seul détail ne donne jamais le lieu : il réduit le champ. On empile les indices jusqu'à ce qu'il n'en reste qu'un.</div>
+    </details>
   </div>
 </section>
 
