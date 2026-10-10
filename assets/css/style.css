@@ -293,3 +293,33 @@ code{font-family:inherit;font-size:.92em;color:var(--ac);background:rgba(61,187,
 .stat:hover{border-color:var(--ac);box-shadow:var(--glow)}
 .stat .num{display:block;font-size:36px;font-weight:800;color:var(--ac);text-shadow:var(--glow);line-height:1}
 .stat .lbl{display:block;margin-top:10px;font-size:11px;color:var(--mu);letter-spacing:.1em;text-transform:uppercase}
+
+/* Accueil : credo / signature OSINT */
+.credo{text-align:center}
+.credo-txt{max-width:840px;margin:14px auto 0;font-size:clamp(21px,3.2vw,32px);font-weight:700;line-height:1.4;color:var(--fg)}
+.credo-txt .hl{color:var(--ac);text-shadow:var(--glow)}
+
+/* Accueil : Le saviez-vous (encart) */
+.callout{max-width:840px;margin:auto;border:1px solid var(--ln);border-left:3px solid var(--ac);background:var(--cd);backdrop-filter:blur(4px);padding:22px 26px}
+.callout .k{margin-bottom:10px}
+.callout-txt{color:var(--fg);font-size:16px;line-height:1.65}
+
+/* Accueil : Anatomie d'une enquête (flux d'étapes) */
+.flow{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:980px;margin:8px auto 0}
+.flow li{flex:0 1 210px;position:relative;border:1px solid var(--ln);background:var(--cd);backdrop-filter:blur(4px);padding:20px 16px;text-align:center;transition:.2s}
+.flow li:hover{border-color:var(--ac);box-shadow:var(--glow)}
+.flow-n{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 10px;border:1px solid var(--ac);color:var(--ac);font-weight:800;text-shadow:var(--glow)}
+.flow li strong{display:block;font-size:14px;margin-bottom:4px}
+.flow li small{color:var(--mu);font-size:12px;line-height:1.5}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--ac);font-weight:700;z-index:1}
+@media(max-width:560px){.flow li::after{display:none}}
+
+/* Accueil : Mini-défi (révélation sans JS) */
+.defi-box{max-width:720px;margin:8px auto 0;border:1px solid var(--ln);background:var(--cd);backdrop-filter:blur(4px);padding:24px;text-align:left}
+.defi-q{color:var(--fg);line-height:1.6}
+.defi{margin-top:16px}
+.defi summary{list-style:none;cursor:pointer;display:inline-block;padding:8px 16px;font-size:13px}
+.defi summary::-webkit-details-marker{display:none}
+.defi[open] summary{background:var(--ac);color:var(--bg)}
+.defi-a{margin-top:16px;padding-top:16px;border-top:1px dashed var(--ln);color:var(--mu);line-height:1.65}
+.defi-a strong{color:var(--fg)}
