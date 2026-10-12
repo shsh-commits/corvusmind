@@ -1,7 +1,6 @@
-# Exemple — remplacez par vos résultats
 # name   : nom de la compétition (affiché en gros)
 # rank   : classement
-# membres : noms identiques à ceux de membres.yml
+# membres : pseudos affichés en @nom (mêmes noms que le champ « name » des fiches _members/)
 # logos  : organisations participantes. img = fichier dans assets/img/logos/
 #          (images externes bloquées par la CSP). img vide = emplacement avec l'initiale du nom.
 #          url = lien ouvert au clic sur le logo (facultatif).

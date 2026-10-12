@@ -6,7 +6,7 @@
 
 Investigations · Géolocalisation · SOCMINT · Compétitions CTF OSINT
 
-**[Voir le site](https://shsh-commits.github.io/corvusmind/)**
+**[Voir le site](https://corvusmind.fr/)**
 
 </div>
 
@@ -40,7 +40,7 @@ Mabimzaa · Shakado · Sirius · Noje_77. La présentation détaillée de chacun
 
 ## Nous contacter
 
-Via le formulaire de contact du site : **[corvusmind](https://shsh-commits.github.io/corvusmind/#contact)**.
+Via le formulaire de contact du site : **[corvusmind](https://corvusmind.fr/#contact)**.
 
 ---
 
