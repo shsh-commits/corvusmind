@@ -4,7 +4,7 @@ owner: ""        # compte GitHub du membre (réservé à l'admin)
 name: "Noje_77"
 role: "Membre"
 order: 4
-photo: ""        # fichier dans assets/img/membres/ (vide = initiale)
+photo: "noje_77.jpg"        # fichier dans assets/img/membres/ (vide = initiale)
 # Liens de la fenêtre « Social » (url vide = ignoré, aucun lien = pas de bouton).
 # img = logo (fichier dans assets/img/logos/), vide = initiale du nom.
 socials:
@@ -14,15 +14,15 @@ socials:
 # Chaque entrée = un badge affiché dans le carousel.
 # img = fichier dans assets/img/logos/, vide = tuile placeholder (initiale). url vide = non cliquable.
 badges:
-  - title: "Deep Threats - Finisher"
-    issuer: "Campus OSINT - DGA"
-    img: "badge-deepthreats-finisher.png"
+  - title: ""
+    issuer: ""
+    img: ""
     url: ""
 # Liste affichée dans le panneau « Certifications » (img = icône dans assets/img/logos/, vide = initiale).
 certifications:
-  - title: "Deepthreats - Participation"
-    issuer: "Campus OSINT - DGA"
-    img: "cert-deepthreats-participation.png"
+  - title: ""
+    issuer: "C"
+    img: ""
     url: ""
 ---
 Remplace ce texte par une courte bio.
