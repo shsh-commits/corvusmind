@@ -5,6 +5,7 @@ permalink: /palmares/
 description: "Palmarès de l'équipe OSINT Corvus Mind : résultats en compétitions CTF 100 % sources ouvertes."
 ---
 <section class="sec">
+  <p class="k top-row page-back"><a class="back" href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
   <p class="k">COMPÉTITIONS</p>
   <h2>Palmarès</h2>
   <div class="grid">
@@ -28,7 +29,7 @@ description: "Palmarès de l'équipe OSINT Corvus Mind : résultats en compétit
           {% capture href %}{% include safe-url.html u=o.url %}{% endcapture %}
           {% if href != "" %}<a class="org-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ o.name | escape }}">{% endif %}
           {% if o.img and o.img != "" %}
-            {% if o.img contains "://" %}{% assign src = o.img | escape %}{% else %}{% assign src = '/assets/img/logos/' | append: o.img | relative_url %}{% endif %}
+            {% assign src = '/assets/img/logos/' | append: o.img | relative_url | escape %}
             <img class="org" src="{{ src }}" alt="{{ o.name | escape }}" title="{{ o.name | escape }}">
           {% else %}
             <span class="org org-ph" title="{{ o.name | escape }}">{{ o.name | slice: 0 | escape }}</span>

@@ -25,6 +25,9 @@ permalink: /news/:year/:title/
 defaults:
   - scope: {type: posts}
     values: {layout: post}
+  # Writeups PDF : accessibles depuis le palmarès mais exclus de sitemap.xml
+  - scope: {path: "assets/writeups"}
+    values: {sitemap: false}
 
 # Pages individuelles des membres (une fiche = un fichier dans _members/)
 collections:
