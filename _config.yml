@@ -6,7 +6,7 @@ locale: fr_FR
 logo: /assets/img/favicon.png      # logo pour Google (résultats de recherche)
 image: /assets/img/logo.png       # aperçu lors d'un partage (LinkedIn, Discord…)
 baseurl: ""  # "/nom-du-repo" si le site n'est pas à la racine
-url: "https://corvusmind.fr"
+url: "https://www.corvusmind.fr"
 # Formspree : créer un formulaire sur formspree.io et coller l'ID ici
 formspree_id: "mqpeppjq"
 # Dépôt GitHub « utilisateur/nom-du-repo » : active le lien « Modifier mon profil »
