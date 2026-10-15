@@ -1,0 +1,71 @@
+---
+ref: home
+layout: default
+permalink: /en/
+---
+<section id="accueil" class="hero">
+  <p class="k">OSINT TEAM · OPEN SOURCE INTELLIGENCE</p>
+  <h1>CORVUS MIND</h1>
+  <p class="lead">Investigations, geolocation, SOCMINT and OSINT CTF competitions.</p>
+</section>
+
+<section class="sec credo">
+  <p class="k">THE OSINT MINDSET</p>
+  <p class="credo-txt">Information is never what's missing. Attention is.<br>Where others stop looking, <span class="hl">the investigation begins.</span></p>
+</section>
+
+<section class="sec">
+  <p class="k">QUICK ACCESS</p>
+  <h2>Explore</h2>
+  <div class="grid nav-cards">
+    <a class="card nav-card" href="{{ '/en/results/' | relative_url }}"><h3>Results</h3><small>Our competition results.</small></a>
+    <a class="card nav-card" href="{{ '/en/team/' | relative_url }}"><h3>The team</h3><small>The members of Corvus Mind.</small></a>
+    <a class="card nav-card" href="{{ '/en/osint/' | relative_url }}"><h3>OSINT</h3><small>Disciplines, method and ethics.</small></a>
+    <a class="card nav-card" href="{{ '/en/toolbox/' | relative_url }}"><h3>Toolbox</h3><small>Our tools, free or premium.</small></a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="callout">
+    <p class="k">DID YOU KNOW</p>
+    <p class="callout-txt">It is often estimated that <strong>80 to 90% of the intelligence</strong> used comes from open sources, not from secret means. Most of it is already public: you just have to know how to read it.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <p class="k">ANATOMY OF AN INVESTIGATION</p>
+  <h2>From a clue to an answer</h2>
+  <ol class="flow">
+    <li><span class="flow-n">1</span><strong>A clue</strong><small>A photo, a username, a date.</small></li>
+    <li><span class="flow-n">2</span><strong>Observation</strong><small>Visual details, metadata, language.</small></li>
+    <li><span class="flow-n">3</span><strong>Cross-checking</strong><small>We compare several independent sources.</small></li>
+    <li><span class="flow-n">4</span><strong>Answer</strong><small>A place, an identity, verified and dated.</small></li>
+  </ol>
+</section>
+
+<section class="sec">
+  <p class="k">MINI CHALLENGE</p>
+  <h2>Your turn</h2>
+  <div class="defi-box">
+    <p class="defi-q">A photo taken outdoors at noon. The pole's shadow is almost non-existent. What can you already deduce?</p>
+    <details class="defi">
+      <summary class="btn">Reveal the answer</summary>
+      <div class="defi-a">An almost non-existent shadow at noon means the sun is nearly overhead: you are therefore <strong>close to the equator</strong>, around the time of an equinox. In OSINT, a single detail never gives you the location: it narrows the field. You stack clues until only one possibility remains.</div>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <p class="k">LET'S TALK</p>
+  <h2>Contact</h2>
+  <form class="form" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+    <label>Subject *<input name="subject" required></label>
+    <label>Message *<textarea name="message" rows="6" required></textarea></label>
+    <label>Email * (so we can get back to you)<input type="email" name="email" required></label>
+    <!-- Piège anti-robots : invisible pour les humains, Formspree rejette l'envoi s'il est rempli -->
+    <label class="hp" aria-hidden="true">Do not fill in<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+    <p class="req-note">* : required</p>
+    <button class="btn" type="submit">Send message</button>
+    <p class="rgpd">Your data (subject, message, email) is used only to reply to you. It is transmitted via Formspree (a processor based in the United States), is never sold or shared, and is deleted once the conversation is over, at the latest 12 months after receipt. You can request access to, correction or deletion of your data through this same form, and you can lodge a complaint with the <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">CNIL</a> (French data protection authority). This site uses no cookies and no trackers.</p>
+  </form>
+</section>

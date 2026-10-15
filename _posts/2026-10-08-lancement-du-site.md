@@ -3,6 +3,7 @@
 title: "Lancement du site Corvus Mind"
 type: "News"          # News, Writeup, Article…
 author: "Mabimzaa"    # pseudo de l'auteur (facultatif)
+ref: "lancement-du-site"   # même ref dans la version anglaise (en/_posts/)
 ---
 Bienvenue sur le site de **Corvus Mind**, équipe francophone de renseignement en sources ouvertes. Ce lancement, c'est l'occasion de dire qui nous sommes, comment on travaille, et ce que vous trouverez ici.
 

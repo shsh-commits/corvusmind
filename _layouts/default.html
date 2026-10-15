@@ -1,17 +1,41 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- comment -%} Page équivalente dans l'autre langue (sélecteur FR / EN et balises hreflang). À défaut : accueil de l'autre langue {%- endcomment -%}
+{%- assign url_fr = site.data.i18n.fr.url.home -%}{%- assign url_en = site.data.i18n.en.url.home -%}{%- assign has_tr = false -%}
+{%- if page.layout == "member" -%}
+  {%- if page.member -%}
+    {%- assign m = site.members | where: "slug", page.member | first -%}
+    {%- if m -%}{%- assign url_fr = m.url -%}{%- assign url_en = page.url -%}{%- assign has_tr = true -%}{%- endif -%}
+  {%- else -%}
+    {%- assign m = page -%}{%- assign url_fr = page.url -%}
+    {%- assign tr = site.pages | where: "member", page.slug | first -%}
+    {%- if tr -%}{%- assign url_en = tr.url -%}{%- assign has_tr = true -%}{%- endif -%}
+  {%- endif -%}
+{%- elsif page.ref -%}
+  {%- assign tr_all = site.pages | concat: site.posts | where: "ref", page.ref -%}
+  {%- assign n_fr = 0 -%}{%- assign n_en = 0 -%}
+  {%- for p in tr_all -%}{%- assign pl = p.lang | default: site.lang -%}
+    {%- if pl == "en" -%}{%- assign url_en = p.url -%}{%- assign n_en = 1 -%}{%- else -%}{%- assign url_fr = p.url -%}{%- assign n_fr = 1 -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if n_fr == 1 and n_en == 1 -%}{%- assign has_tr = true -%}{%- endif -%}
+{%- endif %}
+<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-{% if page.layout == "member" %}{% assign page_title = page.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.name | append: " — " | append: page.role | append: ". Membre de l'équipe OSINT Corvus Mind." %}{% elsif page.layout == "post" %}{% assign page_title = page.title | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: site.tagline %}{% assign page_desc = site.description %}{% endif %}
+{% if page.layout == "member" %}{% assign m_role = page.role | default: m.role %}{% assign page_title = m.name | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = m.name | append: " — " | append: m_role | append: ". " | append: t.member_desc %}{% elsif page.layout == "post" %}{% assign page_title = page.title | append: " · " | append: site.title | append: " OSINT" %}{% assign page_desc = page.excerpt | strip_html | strip_newlines | truncate: 160 %}{% else %}{% assign page_title = site.title | append: " OSINT — " | append: t.tagline %}{% assign page_desc = t.description %}{% endif %}
 <title>{{ page_title | escape }}</title>
 <meta name="description" content="{{ page_desc | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-<meta property="og:type" content="website">
+{% if has_tr %}<link rel="alternate" hreflang="fr" href="{{ url_fr | absolute_url }}">
+<link rel="alternate" hreflang="en" href="{{ url_en | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ url_fr | absolute_url }}">
+{% endif %}<meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:locale" content="{{ t.locale }}">
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:description" content="{{ page_desc | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
@@ -21,7 +45,7 @@
 {% if page.url == "/" %}<script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","@id":"{{ '/#org' | absolute_url }}","name":"Corvus Mind","alternateName":["Corvus Mind OSINT","CORVUS MIND"],"url":"{{ '/' | absolute_url }}","logo":"{{ site.logo | absolute_url }}","description":{{ site.description | jsonify }}},
- {"@type":"WebSite","name":"Corvus Mind","alternateName":"Corvus Mind OSINT","url":"{{ '/' | absolute_url }}","inLanguage":"fr","publisher":{"@id":"{{ '/#org' | absolute_url }}"}}
+ {"@type":"WebSite","name":"Corvus Mind","alternateName":"Corvus Mind OSINT","url":"{{ '/' | absolute_url }}","inLanguage":["fr","en"],"publisher":{"@id":"{{ '/#org' | absolute_url }}"}}
 ]}
 </script>{% endif %}
 <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
@@ -30,20 +54,28 @@
 <body>
 <div class="bg-logo" aria-hidden="true"></div>
 <header class="nav">
-  <a class="brand" href="{{ '/#accueil' | relative_url }}">
+  <a class="brand" href="{{ t.url.home | append: '#accueil' | relative_url }}">
     <span class="crow" aria-hidden="true">
       <span class="eye"></span>
     </span>CORVUS MIND</a>
   <nav>
-    <a href="{{ '/news/' | relative_url }}">News</a>
-    <a href="{{ '/palmares/' | relative_url }}">Palmarès</a>
-    <a href="{{ '/equipe/' | relative_url }}">L'équipe</a>
-    <a href="{{ '/osint/' | relative_url }}">OSINT</a>
-    <a href="{{ '/toolbox/' | relative_url }}">Toolbox</a>
-    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    <a href="{{ t.url.news | relative_url }}">{{ t.nav.news }}</a>
+    <a href="{{ t.url.palmares | relative_url }}">{{ t.nav.palmares }}</a>
+    <a href="{{ t.url.team | relative_url }}">{{ t.nav.team }}</a>
+    <a href="{{ t.url.osint | relative_url }}">{{ t.nav.osint }}</a>
+    <a href="{{ t.url.toolbox | relative_url }}">{{ t.nav.toolbox }}</a>
+    <a href="{{ t.url.home | append: '#contact' | relative_url }}">{{ t.nav.contact }}</a>
+    <details class="lang-switch">
+      <summary class="btn" aria-label="{{ t.lang_switch }} : {{ t.label }}">{{ t.short }}</summary>
+      <div class="lang-pop">
+        <a href="{{ url_fr | relative_url }}" hreflang="fr" lang="fr"{% if lang == "fr" %} aria-current="true"{% endif %}>{{ site.data.i18n.fr.label }}</a>
+        <a href="{{ url_en | relative_url }}" hreflang="en" lang="en"{% if lang == "en" %} aria-current="true"{% endif %}>{{ site.data.i18n.en.label }}</a>
+      </div>
+    </details>
   </nav>
 </header>
 <main>{{ content }}</main>
-<footer><a href="{{ '/#accueil' | relative_url }}">CORVUS MIND</a><span>OSINT</span><a href="{{ '/#accueil' | relative_url }}">Retour en haut</a><small class="copy">© {{ site.time | date: '%Y' }} Corvus Mind · Tous droits réservés</small></footer>
+<footer><a href="{{ t.url.home | append: '#accueil' | relative_url }}">CORVUS MIND</a><span>OSINT</span><a href="{{ t.url.home | append: '#accueil' | relative_url }}">{{ t.back_top }}</a><small class="copy">© {{ site.time | date: '%Y' }} Corvus Mind · {{ t.rights }}</small></footer>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>

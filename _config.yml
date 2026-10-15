@@ -26,6 +26,11 @@ defaults:
   # Writeups PDF : accessibles depuis le palmarès mais exclus de sitemap.xml
   - scope: {path: "assets/writeups"}
     values: {sitemap: false}
+  # Version anglaise : tout ce qui est dans en/ (pages, fiches membres, articles en/_posts/)
+  - scope: {path: "en"}
+    values: {lang: en}
+  - scope: {path: "en/_posts", type: posts}
+    values: {permalink: "/en/news/:year/:title/"}
 
 # Pages individuelles des membres (une fiche = un fichier dans _members/)
 collections:

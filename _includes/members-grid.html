@@ -1,0 +1,18 @@
+{%- comment -%} Grille des membres (FR et EN). En anglais, lien vers la fiche en/members/<fichier>.md si elle existe, sinon vers la fiche FR {%- endcomment -%}
+{%- assign _lang = page.lang | default: site.lang -%}{%- assign _t = site.data.i18n[_lang] -%}
+<div class="grid">
+{% assign members = site.members | sort: 'order' %}
+{% for m in members %}
+  {% assign m_url = m.url %}{% assign m_role = m.role %}
+  {% if _lang == "en" %}{% assign m_tr = site.pages | where: "member", m.slug | first %}{% if m_tr %}{% assign m_url = m_tr.url %}{% assign m_role = m_tr.role | default: m.role %}{% endif %}{% endif %}
+  <article class="card member">
+    {% if m.photo and m.photo != "" %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}<img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
+    {% else %}<div class="av">{{ m.name | slice: 0 | escape }}</div>{% endif %}
+    <h3>{{ m.name | escape }}</h3>
+    <small>{{ m_role | escape }}</small>
+    <div class="links">
+      <a class="detail" href="{{ m_url | relative_url }}">{{ _t.details }}</a>
+    </div>
+  </article>
+{% endfor %}
+</div>

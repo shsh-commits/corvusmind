@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
+{%- assign lang = page.lang | default: site.lang -%}{%- assign t = site.data.i18n[lang] -%}
 <div class="post">
-  <p class="k top-row"><a class="back" href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
+  <p class="k top-row"><a class="back" href="{{ t.url.home | relative_url }}">{{ t.back_home }}</a></p>
   <article class="sheet">
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>{% if page.type and page.type != "" %}<span class="news-tag">{{ page.type | escape }}</span>{% endif %}{% if page.author and page.author != "" %}<span>par @{{ page.author | escape }}</span>{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: t.date_format }}</time>{% if page.type and page.type != "" %}<span class="news-tag">{{ page.type | escape }}</span>{% endif %}{% if page.author and page.author != "" %}<span>{{ t.by }} @{{ page.author | escape }}</span>{% endif %}</p>
     <h2>{{ page.title | escape }}</h2>
     <div class="post-body">{{ content }}</div>
   </article>

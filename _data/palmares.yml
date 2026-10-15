@@ -1,5 +1,6 @@
 # name   : nom de la compétition (affiché en gros)
-# rank   : classement
+# rank   : classement (rank_en : version anglaise, facultatif)
+# meta   : sous-titre (meta_en : version anglaise, facultatif)
 # membres : pseudos affichés en @nom (mêmes noms que le champ « name » des fiches _members/)
 # logos  : organisations participantes. img = fichier dans assets/img/logos/
 #          (images externes bloquées par la CSP). img vide = emplacement avec l'initiale du nom.
@@ -9,7 +10,9 @@
 #           forcer un autre fichier de assets/writeups/ ou un lien https://.
 - name: "DeepThreats 2026"
   rank: "25e/491"
+  rank_en: "25th/491"
   meta: "CTF 100% OSINT"
+  meta_en: "100% OSINT CTF"
   membres: ["Mabimzaa", "Sirius", "Shakado"]
   logos:
     - name: "Campus OSINT"
@@ -23,7 +26,9 @@
       url: "https://hackolyte.fr/"  
 - name: "Opération Culot - Bpifrance"
   rank: "3e/223 (Distanciel) - 5e/24 (Présentiel)"
+  rank_en: "3rd/223 (Online) - 5th/24 (On-site)"
   meta: "CTF 100% OSINT #BIG2026"
+  meta_en: "100% OSINT CTF #BIG2026"
   membres: ["Mabimzaa", "Sirius", "Shakado", "Noje_77"]
   logos:
     - name: "Bpifrance"

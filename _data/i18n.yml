@@ -1,0 +1,84 @@
+# Textes d'interface par langue (menu, pied de page, boutons, pages membres…).
+# La langue d'une page vient de son champ « lang » (défaut : site.lang = fr ;
+# tout ce qui est dans en/ est en anglais, cf. _config.yml).
+# Pages traduites : même champ « ref » dans la version FR et dans la version EN,
+# c'est ce qui permet au sélecteur FR / EN de pointer vers la bonne page.
+fr:
+  label: "Français"
+  short: "FR"
+  locale: fr_FR
+  date_format: "%d/%m/%Y"
+  tagline: "Équipe de renseignement en sources ouvertes"
+  description: "Corvus Mind, équipe OSINT francophone : investigations en sources ouvertes, géolocalisation, SOCMINT et compétitions CTF OSINT."
+  url:
+    home: /
+    news: /news/
+    palmares: /palmares/
+    team: /equipe/
+    osint: /osint/
+    toolbox: /toolbox/
+    members: /membres/
+  nav:
+    news: "News"
+    palmares: "Palmarès"
+    team: "L'équipe"
+    osint: "OSINT"
+    toolbox: "Toolbox"
+    contact: "Contact"
+  lang_switch: "Langue"
+  back_home: "← Retour à l'accueil"
+  back_top: "Retour en haut"
+  rights: "Tous droits réservés"
+  back_team: "Retour à l'équipe"
+  edit_profile: "Modifier mon profil"
+  member_desc: "Membre de l'équipe OSINT Corvus Mind."
+  badges: "Badges"
+  certifications: "Certifications"
+  no_badges: "Aucun badge pour le moment."
+  no_certs: "Aucune certification pour le moment."
+  prev: "Précédent"
+  next: "Suivant"
+  close: "Fermer"
+  details: "Détail"
+  by: "par"
+  no_posts: "Aucune publication pour le moment."
+
+en:
+  label: "English"
+  short: "EN"
+  locale: en_US
+  date_format: "%Y-%m-%d"
+  tagline: "Open source intelligence team"
+  description: "Corvus Mind, a French-speaking OSINT team: open source investigations, geolocation, SOCMINT and OSINT CTF competitions."
+  url:
+    home: /en/
+    news: /en/news/
+    palmares: /en/results/
+    team: /en/team/
+    osint: /en/osint/
+    toolbox: /en/toolbox/
+    members: /en/members/
+  nav:
+    news: "News"
+    palmares: "Results"
+    team: "The team"
+    osint: "OSINT"
+    toolbox: "Toolbox"
+    contact: "Contact"
+  lang_switch: "Language"
+  back_home: "← Back to home"
+  back_top: "Back to top"
+  rights: "All rights reserved"
+  back_team: "Back to the team"
+  edit_profile: "Edit my profile"
+  member_desc: "Member of the Corvus Mind OSINT team."
+  badges: "Badges"
+  certifications: "Certifications"
+  no_badges: "No badges yet."
+  no_certs: "No certifications yet."
+  prev: "Previous"
+  next: "Next"
+  close: "Close"
+  details: "Details"
+  by: "by"
+  no_posts: "Nothing published yet."

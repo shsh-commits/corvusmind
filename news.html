@@ -1,4 +1,5 @@
 ---
+ref: news
 layout: default
 title: News
 permalink: /news/
@@ -7,5 +8,6 @@ permalink: /news/
   <p class="k top-row page-back"><a class="back" href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
   <p class="k">NEWS</p>
   <h2>News</h2>
-  {% if site.posts.size > 0 %}{% include news-list.html posts=site.posts %}{% else %}<p class="lead">Aucune publication pour le moment.</p>{% endif %}
+  {% assign posts = site.posts | where_exp: "p", "p.lang != 'en'" %}
+  {% if posts.size > 0 %}{% include news-list.html posts=posts %}{% else %}<p class="lead">Aucune publication pour le moment.</p>{% endif %}
 </section>

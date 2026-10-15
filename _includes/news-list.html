@@ -1,9 +1,10 @@
 {%- comment -%} Liste de news. include.posts = articles à afficher {%- endcomment -%}
+{%- assign _lang = page.lang | default: site.lang -%}{%- assign _t = site.data.i18n[_lang] -%}
 <ul class="news-list">
   {% for p in include.posts %}
   <li>
     <a href="{{ p.url | relative_url }}">
-      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%d/%m/%Y" }}</time>
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: _t.date_format }}</time>
       <span class="news-tag">{{ p.type | default: "News" | escape }}</span>
       <span class="news-title">{{ p.title | escape }}</span>
     </a>

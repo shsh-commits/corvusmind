@@ -1,4 +1,5 @@
 ---
+ref: team
 layout: default
 title: L'équipe
 permalink: /equipe/
@@ -8,18 +9,5 @@ description: "L'équipe OSINT Corvus Mind : les membres, leurs spécialités, ba
   <p class="k top-row page-back"><a class="back" href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
   <p class="k">ÉQUIPE</p>
   <h2>Membres</h2>
-  <div class="grid">
-  {% assign members = site.members | sort: 'order' %}
-  {% for m in members %}
-    <article class="card member">
-      {% if m.photo and m.photo != "" %}{% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}<img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
-      {% else %}<div class="av">{{ m.name | slice: 0 | escape }}</div>{% endif %}
-      <h3>{{ m.name | escape }}</h3>
-      <small>{{ m.role | escape }}</small>
-      <div class="links">
-        <a class="detail" href="{{ m.url | relative_url }}">Détail</a>
-      </div>
-    </article>
-  {% endfor %}
-  </div>
+  {% include members-grid.html %}
 </section>

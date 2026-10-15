@@ -1,22 +1,26 @@
 ---
 layout: default
 ---
+{%- assign lang = page.lang | default: site.lang -%}{%- assign t = site.data.i18n[lang] -%}
+{%- comment -%} Fiche anglaise (en/members/) : champ « member » = nom du fichier FR dans _members/, dont elle reprend les données. Son texte = bio en anglais, « role » facultatif {%- endcomment -%}
+{%- if page.member -%}{%- assign m = site.members | where: "slug", page.member | first -%}{%- else -%}{%- assign m = page -%}{%- endif -%}
+{%- assign m_role = page.role | default: m.role -%}
 <section class="sec member-page">
-  <p class="k top-row"><a class="back" href="{{ '/equipe/' | relative_url }}">Retour à l'équipe</a>
-    {% if site.repository and site.repository != "" %}<a class="edit" href="https://github.com/{{ site.repository }}/edit/{{ site.branch | default: 'main' }}/{{ page.path }}" target="_blank" rel="noopener">Modifier mon profil</a>{% endif %}</p>
+  <p class="k top-row"><a class="back" href="{{ t.url.team | relative_url }}">{{ t.back_team }}</a>
+    {% if site.repository and site.repository != "" %}<a class="edit" href="https://github.com/{{ site.repository }}/edit/{{ site.branch | default: 'main' }}/{{ m.path }}" target="_blank" rel="noopener">{{ t.edit_profile }}</a>{% endif %}</p>
 
   <div class="profile">
-    {% if page.photo and page.photo != "" %}
-      {% assign photo = '/assets/img/membres/' | append: page.photo | relative_url | escape %}
-      <img class="av" src="{{ photo }}" alt="{{ page.name | escape }}">
+    {% if m.photo and m.photo != "" %}
+      {% assign photo = '/assets/img/membres/' | append: m.photo | relative_url | escape %}
+      <img class="av" src="{{ photo }}" alt="{{ m.name | escape }}">
     {% else %}
-      <div class="av">{{ page.name | slice: 0 | escape }}</div>
+      <div class="av">{{ m.name | slice: 0 | escape }}</div>
     {% endif %}
     <div class="profile-meta">
-      <h2>{{ page.name | escape }}</h2>
-      <small>{{ page.role | escape }}</small>
+      <h2>{{ m.name | escape }}</h2>
+      <small>{{ m_role | escape }}</small>
       {% comment %} Liens construits d'abord : si aucun n'est valide, le bouton Social n'est pas affiché {% endcomment %}
-      {% capture social_links %}{% for s in page.socials %}
+      {% capture social_links %}{% for s in m.socials %}
         {% capture href %}{% include safe-url.html u=s.url %}{% endcapture %}
         {% if href != "" %}<a class="social-link" href="{{ href }}" target="_blank" rel="noopener" title="{{ s.name | escape }}">
           {% if s.img and s.img != "" %}
@@ -36,15 +40,15 @@ layout: default
 
   {% if content != "" %}<div class="bio">{{ content }}</div>{% endif %}
 
-  {% assign certs = page.certifications | where_exp: "c", "c.title != ''" %}
+  {% assign certs = m.certifications | where_exp: "c", "c.title != ''" %}
   <div class="sub-row">
-    <h3 class="sub">Badges</h3>
-    <button class="btn cert-open" type="button" aria-controls="cert-panel" aria-expanded="false">Certifications ({{ certs.size }})</button>
+    <h3 class="sub">{{ t.badges }}</h3>
+    <button class="btn cert-open" type="button" aria-controls="cert-panel" aria-expanded="false">{{ t.certifications }} ({{ certs.size }})</button>
   </div>
-  {% assign badges = page.badges | where_exp: "b", "b.title != ''" %}
+  {% assign badges = m.badges | where_exp: "b", "b.title != ''" %}
   {% if badges.size > 0 %}
   <div class="carousel">
-    <button class="cbtn prev" type="button" aria-label="Précédent">&lsaquo;</button>
+    <button class="cbtn prev" type="button" aria-label="{{ t.prev }}">&lsaquo;</button>
     <div class="track">
       {% for b in badges %}
       <figure class="badge">
@@ -61,18 +65,18 @@ layout: default
       </figure>
       {% endfor %}
     </div>
-    <button class="cbtn next" type="button" aria-label="Suivant">&rsaquo;</button>
+    <button class="cbtn next" type="button" aria-label="{{ t.next }}">&rsaquo;</button>
   </div>
   {% else %}
-  <p class="lead">Aucun badge pour le moment.</p>
+  <p class="lead">{{ t.no_badges }}</p>
   {% endif %}
 </section>
 
 <div class="cert-overlay" hidden></div>
 <aside id="cert-panel" class="cert-panel" role="dialog" aria-modal="true" aria-labelledby="cert-title" aria-hidden="true" tabindex="-1">
   <div class="cert-head">
-    <h3 id="cert-title">Certifications</h3>
-    <button class="cbtn cert-close" type="button" aria-label="Fermer">&times;</button>
+    <h3 id="cert-title">{{ t.certifications }}</h3>
+    <button class="cbtn cert-close" type="button" aria-label="{{ t.close }}">&times;</button>
   </div>
   {% if certs.size > 0 %}
   <ul class="cert-list">
@@ -87,7 +91,7 @@ layout: default
     {% endfor %}
   </ul>
   {% else %}
-  <p class="lead">Aucune certification pour le moment.</p>
+  <p class="lead">{{ t.no_certs }}</p>
   {% endif %}
 </aside>
 
