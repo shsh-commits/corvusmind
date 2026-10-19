@@ -17,12 +17,12 @@ badges:
   - title: "Deep Threats - Finisher"
     issuer: "Campus OSINT - DGA"
     img: "badge-deepthreats-finisher.png"
-    url: ""
+    url: "https://badgify.eu/badge/VXzxa9Znz-wuTv3pJccHKyKDt8GsXW5lp7EqLJ6Hn6semLJUbsw4CcjSNjzzAb9d"
 # Liste affichée dans le panneau « Certifications » (img = icône dans assets/img/logos/, vide = initiale).
 certifications:
   - title: "Deepthreats - Participation"
     issuer: "Campus OSINT - DGA"
     img: "cert-deepthreats-participation.png"
-    url: ""
+    url: "https://badgify.eu/certificate/NNKtV7QFroc-ZsWoShBZ4T6pnSJF5I-v"
 ---
 Membre de Corvus Mind. OSINT au sens large : recherche de personnes, géolocalisation, SOCMINT, analyse d'images. J'aime recouper les sources jusqu'à ce que les pièces s'emboîtent.
