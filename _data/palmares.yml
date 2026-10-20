@@ -25,8 +25,8 @@
       img: "hackolyte.png"
       url: "https://hackolyte.fr/"  
 - name: "Opération Culot - Bpifrance"
-  rank: "3e/223 (Distanciel) - 5e/24 (Présentiel)"
-  rank_en: "3rd/223 (Online) - 5th/24 (On-site)"
+  rank: "3e/315 (Distanciel) - 5e/24 (Présentiel)"
+  rank_en: "3rd/315 (Online) - 5th/24 (On-site)"
   meta: "CTF 100% OSINT #BIG2026"
   meta_en: "100% OSINT CTF #BIG2026"
   membres: ["Mabimzaa", "Sirius", "Shakado", "Noje_77"]
