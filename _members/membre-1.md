@@ -24,7 +24,7 @@ certifications:
     issuer: "Campus OSINT - DGA"
     img: "cert-deepthreats-participation.png"
     url: "https://badgify.eu/certificate/IJD3WOE6BA5grcMJIT88QoHeRUlpSRWu"
-  -title: "Opération Culot - BIG 2026"
+  - title: "Opération Culot - BIG 2026"
     issuer: "Hack'olyte & Bpifrance"
     img: "bpifrance.png"
     url: "https://badgify.eu/certificate/wQY5dQMYldQsMA_qaHx7CKaeLYMHLo3U"
