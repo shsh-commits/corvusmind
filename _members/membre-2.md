@@ -24,5 +24,9 @@ certifications:
     issuer: "Campus OSINT - DGA"
     img: "cert-deepthreats-participation.png"
     url: "https://badgify.eu/certificate/NNKtV7QFroc-ZsWoShBZ4T6pnSJF5I-v"
+  - title: "Opération Culot - BIG 2026"
+    issuer: "Hack'olyte & Bpifrance"
+    img: "bpifrance.png"
+    url: "https://badgify.eu/verify?id=ID-ACM5IIE"
 ---
 Membre de Corvus Mind. OSINT au sens large : recherche de personnes, géolocalisation, SOCMINT, analyse d'images. J'aime recouper les sources jusqu'à ce que les pièces s'emboîtent.
