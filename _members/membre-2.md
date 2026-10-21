@@ -17,7 +17,7 @@ badges:
   - title: "Deep Threats - Finisher"
     issuer: "Campus OSINT - DGA"
     img: "badge-deepthreats-finisher.png"
-    url: "https://badgify.eu/badge/VXzxa9Znz-wuTv3pJccHKyKDt8GsXW5lp7EqLJ6Hn6semLJUbsw4CcjSNjzzAb9d"
+    url: "https://badgify.eu/badge/J9QuAauUy4NipDdxa0W0mYAtCeSEw4A0lY7-a7yuNoV-G-lQlcbdRGA-4rwxXXhV"
 # Liste affichée dans le panneau « Certifications » (img = icône dans assets/img/logos/, vide = initiale).
 certifications:
   - title: "Deepthreats - Participation"
@@ -27,6 +27,6 @@ certifications:
   - title: "Opération Culot - BIG 2026"
     issuer: "Hack'olyte & Bpifrance"
     img: "bpifrance.png"
-    url: "https://badgify.eu/verify?id=ID-ACM5IIE"
+    url: "https://badgify.eu/certificate/PI-IzYvPqyzUAyyabLgNuseUiQSAilkA"
 ---
 Membre de Corvus Mind. OSINT au sens large : recherche de personnes, géolocalisation, SOCMINT, analyse d'images. J'aime recouper les sources jusqu'à ce que les pièces s'emboîtent.
