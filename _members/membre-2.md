@@ -17,6 +17,10 @@ badges:
   - title: "Deep Threats - Finisher"
     issuer: "Campus OSINT - DGA"
     img: "badge-deepthreats-finisher.png"
+    url: "https://badgify.eu/badge/VXzxa9Znz-wuTv3pJccHKyKDt8GsXW5lp7EqLJ6Hn6semLJUbsw4CcjSNjzzAb9d"
+  - title: "Opération Culot - BIG 2026"
+    issuer: "Hack'olyte & Bpifrance"
+    img: "bpifrance.png"
     url: "https://badgify.eu/badge/J9QuAauUy4NipDdxa0W0mYAtCeSEw4A0lY7-a7yuNoV-G-lQlcbdRGA-4rwxXXhV"
 # Liste affichée dans le panneau « Certifications » (img = icône dans assets/img/logos/, vide = initiale).
 certifications:
